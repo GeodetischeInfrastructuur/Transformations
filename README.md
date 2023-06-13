@@ -1,4 +1,4 @@
-* Repository tot est modifcation of the proj.db
+* Repository to test modifcation of the proj.db
 
 * Result should be that a transformation with NSGI as authority is added.
 
