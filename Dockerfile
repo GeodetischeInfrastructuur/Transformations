@@ -1,5 +1,5 @@
 # Build
-FROM osgeo/proj:latest as builder
+FROM osgeo/proj:9.2.1 as builder
 
 RUN apt update \
     && apt upgrade -y \
@@ -11,6 +11,6 @@ ADD nsgi.sql /usr/share/proj/nsgi.sql
 RUN cat /usr/share/proj/nsgi.sql | sqlite3 /usr/share/proj/proj.db
 
 # Release
-FROM osgeo/proj:latest as release
+FROM osgeo/proj:9.2.1 as release
 
 COPY --from=builder /usr/share/proj/proj.db /usr/share/proj/proj.db
