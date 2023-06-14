@@ -1,15 +1,45 @@
-* Repository to test modifcation of the proj.db
+# NSGI PROJ.db
 
-* Result should be that a transformation with NSGI as authority is added.
+This repository contains the SQL which adds to the proj.db:
 
-* Build with ``` docker build -t nsgi/proj . ```
+1. the NSGI as an authority
+1. and tranformations for:
+    1. ETRF2000 to RDNAP Hybrid
+    1. ETRF2000 -> RD
 
-* Run with ``` docker run -it nsgi/proj ```
+## Docker
 
-* Test in container with: ``` projinfo -s EPSG:28992 -t EPSG:9067 --authority NSGI --hide-ballpark -o PROJ ```
+### Build
 
-* Should result in 
+```bash
+docker build -t nsgi/proj:9.2.1 .
 ```
+
+### Run
+
+Starting a interactive terminal run:
+
+```bash
+docker run -it --rm --name nsgi-proj-9.2.1 nsgi/proj:9.2.1
+```
+
+Run directly from console:
+
+```bash
+docker run --rm --name nsgi-proj-9.2.1 nsgi/proj:9.2.1 projinfo --version
+```
+
+## Test
+
+When running the following command:
+
+```bash
+projinfo -s EPSG:28992 -t EPSG:9067 --authority NSGI --hide-ballpark -o PROJ
+```
+
+Should result in the following result:
+
+```bash
 Candidate operations found: 1
 -------------------------------------
 Operation No. 1:
@@ -33,4 +63,3 @@ PROJ string:
   +step +proj=axisswap +order=2,1
   +step +proj=unitconvert +xy_in=rad +xy_out=deg
 ```
-
