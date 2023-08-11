@@ -72,7 +72,7 @@ VALUES
         'NSGI',
         'ETRF2000_TO_RDNAP_HYBRID',
         'EPSG',
-        '1275',
+        '1262',
         'EPSG',
         '1024'
     );
@@ -133,7 +133,7 @@ VALUES
         'NSGI',
         'ETRF2000_TO_RD_VARIANT_1',
         'EPSG',
-        '1275',
+        '1262',
         'EPSG',
         '1024'
     );
