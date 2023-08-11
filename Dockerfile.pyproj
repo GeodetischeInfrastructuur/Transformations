@@ -1,4 +1,4 @@
-FROM nsgi/proj:9.2.1.1267 AS proj
+FROM nsgi/proj:9.2.1 AS proj
 
 FROM python:3.11.4-slim-bullseye
 
@@ -16,4 +16,4 @@ RUN cd /usr/local/lib/python3.11/site-packages/pyproj/proj_dir/share/proj && \
     curl -o nl_nsgi_rdtrans2018.tif https://cdn.proj.org/nl_nsgi_rdtrans2018.tif && \
     curl -o us_nga_egm96_15.tif https://cdn.proj.org/us_nga_egm96_15.tif
 
-COPY --from=nsgi/proj:9.2.1.1267 /usr/share/proj/proj.db /usr/local/lib/python3.11/site-packages/pyproj/proj_dir/share/proj/
+COPY --from=nsgi/proj:9.2.1 /usr/share/proj/proj.db /usr/local/lib/python3.11/site-packages/pyproj/proj_dir/share/proj/
