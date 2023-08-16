@@ -26,10 +26,10 @@ docker run -it --rm --name nsgi-proj-9.2.1 nsgi/proj:9.2.1
 Run directly from console:
 
 ```bash
-docker run --rm --name nsgi-proj-9.2.1 nsgi/proj:9.2.1 projinfo --version
+docker run --rm --name nsgi-proj-9.2.1 nsgi/proj:9.2.1 projinfo
 ```
 
-## Test
+### Verify
 
 When running the following command:
 
@@ -37,7 +37,7 @@ When running the following command:
 projinfo -s EPSG:28992 -t EPSG:9067 --authority NSGI --hide-ballpark -o PROJ
 ```
 
-Should result in the following result:
+Should result in the following result, verifing the expected transformation is available:
 
 ```bash
 Candidate operations found: 1
@@ -63,3 +63,36 @@ PROJ string:
   +step +proj=axisswap +order=2,1
   +step +proj=unitconvert +xy_in=rad +xy_out=deg
 ```
+
+## Pyproj
+
+Goal of this image is to have this as a correct base for futher
+solutions/implementations, like with
+[pyproj](https://pyproj4.github.io/pyproj/stable/index.html) for instance
+
+### Test
+
+```bash
+docker build -f validate/Dockerfile.pyproj -t nsgi/pyproj:3.6.0 .
+
+docker run --rm -it nsgi/pyproj:3.6.0 bash
+```
+
+Running the following python code
+
+```python
+from pyproj import Transformer
+etrf = Transformer.from_crs("EPSG:7931", "EPSG:7415")
+"{0[0]:.4f}, {0[1]:.4f}, {0[2]:.4f}".format(etrf.transform(52.115330444,7.684748554, 41.4160))
+```
+
+Would result into the following output `'312352.6004, 461058.5812, -2.5206'`
+
+Running the full validation file can be done through the following command
+
+```bash
+docker run -d --rm -v `pwd`/validate:/validate nsgi/pyproj:3.6.0 python ./validate/validate.py
+```
+
+This will result in a `zelfvalidatie.csv` containing the results. When correct
+the result would show no (or minimal) deviation.
