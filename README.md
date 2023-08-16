@@ -26,10 +26,10 @@ docker run -it --rm --name nsgi-proj-9.2.1 nsgi/proj:9.2.1
 Run directly from console:
 
 ```bash
-docker run --rm --name nsgi-proj-9.2.1 nsgi/proj:9.2.1 projinfo --version
+docker run --rm --name nsgi-proj-9.2.1 nsgi/proj:9.2.1 projinfo
 ```
 
-### Validate
+### Verify
 
 When running the following command:
 
@@ -37,7 +37,7 @@ When running the following command:
 projinfo -s EPSG:28992 -t EPSG:9067 --authority NSGI --hide-ballpark -o PROJ
 ```
 
-Should result in the following result:
+Should result in the following result, verifing the expected transformation is available:
 
 ```bash
 Candidate operations found: 1
@@ -73,7 +73,7 @@ solutions/implementations, like with
 ### Test
 
 ```bash
-docker build -f Dockerfile.pyproj -t nsgi/pyproj:3.6.0 .
+docker build -f validate/Dockerfile.pyproj -t nsgi/pyproj:3.6.0 .
 
 docker run --rm -it nsgi/pyproj:3.6.0 bash
 ```
@@ -91,7 +91,7 @@ Would result into the following output `'312352.6004, 461058.5812, -2.5206'`
 Running the full validation file can be done through the following command
 
 ```bash
-docker run -d --rm -v `pwd`:/validate nsgi/pyproj:3.6.0 python ./validate/validate.py
+docker run -d --rm -v `pwd`/validate:/validate nsgi/pyproj:3.6.0 python ./validate/validate.py
 ```
 
 This will result in a `zelfvalidatie.csv` containing the results. When correct
