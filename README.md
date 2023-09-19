@@ -1,11 +1,13 @@
-# NSGI PROJ.db
+# Transformations
+
+[![GitHub license](https://img.shields.io/github/license/GeodetischeInfrastructuur/Transformations)](https://github.com/GeodetischeInfrastructuur/Transformations/blob/master/LICENSE)
 
 This repository contains the SQL which adds to the proj.db:
 
 1. the NSGI as an authority
-1. and tranformations for:
+2. and tranformations for:
     1. ETRF2000 to RDNAP Hybrid
-    1. ETRF2000 -> RD
+    2. ETRF2000 -> RD
 
 ## Docker
 
@@ -96,3 +98,9 @@ docker run -d --rm -v `pwd`/validate:/validate nsgi/pyproj:3.6.0 python ./valida
 
 This will result in a `zelfvalidatie.csv` containing the results. When correct
 the result would show no (or minimal) deviation.
+
+## LICENSE
+
+The SQL used in this repository is licensed under a [CC-BY license](LICENSE).
+
+All other code in this repository is licensed under the [MIT license](LICENSE-CODE).
