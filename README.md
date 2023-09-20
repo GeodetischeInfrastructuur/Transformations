@@ -3,19 +3,21 @@
 [![GitHub
 license](https://img.shields.io/github/license/GeodetischeInfrastructuur/Transformations)](https://github.com/GeodetischeInfrastructuur/Transformations/blob/master/LICENSE)
 
-This repository contains the SQL which adds the following to the proj.db:
+This repository contains:
 
-1. the NSGI as an authority
-2. and the tranformations for:
-    1. ETRF2000 to RDNAP Hybrid
-    2. ETRF2000 -> RD
+1. SQL which adds to the [PROJ](https://proj.org/en/9.3/) proj.db:
+      1. NSGI as an authority
+      2. Transformations (with authority NSGI) for:
+            1. ETRF2000 to RDNAP Hybrid
+            2. ETRF2000 to RD
+2. A Dockerfile with [PROJ](https://proj.org/en/9.3/) configured to use these NSGI transformation definitions
 
-These transformations are the onces as defined by the
-[NSGI](https://www.nsgi.nl/) (Nederlandse Samenwerkingsverband Geodetische
-Infrastructuur). In the future additional transformations will be added to this
-repository.
+These transformations are defined by [NSGI](https://www.nsgi.nl/) (Nederlandse Samenwerkingsverband Geodetische
+Infrastructuur). In the future additional transformations will be added to this repository.
 
 ## Docker
+
+The Docker image is intended to be used as a base image, for applications that layer on top of PROJ; for instance use it with [pyproj](https://pyproj4.github.io/pyproj/stable/index.html).
 
 ### Build
 
@@ -31,7 +33,7 @@ To start an interactive terminal inside the container run:
 docker run -it --rm --name nsgi-proj-9.3.0 nsgi/proj:9.3.0
 ```
 
-To invoke projinfo from your current terminal sessions run:
+To invoke `projinfo` from your current terminal sessions run:
 
 ```bash
 docker run --rm --name nsgi-proj-9.3.0 nsgi/proj:9.3.0 projinfo
@@ -39,7 +41,8 @@ docker run --rm --name nsgi-proj-9.3.0 nsgi/proj:9.3.0 projinfo
 
 ### Verify
 
-To verify whether the expected NSGI transformation from EPSG:28992 to EPSG:9067
+To verify whether the expected NSGI transformation from `EPSG:28992` to `EPSG:9067`
+
 is available in PROJ run the following command:
 
 ```bash
@@ -48,7 +51,7 @@ projinfo -s EPSG:28992 -t EPSG:9067 --authority NSGI --hide-ballpark -o PROJ
 
 This should output the following transformation definition:
 
-```bash
+```
 Candidate operations found: 1
 -------------------------------------
 Operation No. 1:
@@ -73,21 +76,16 @@ PROJ string:
   +step +proj=unitconvert +xy_in=rad +xy_out=deg
 ```
 
-## Pyproj
-
-Goal of this image is to have this as a correct base for futher
-solutions/implementations, like with
-[pyproj](https://pyproj4.github.io/pyproj/stable/index.html) for instance
-
 ### Test
+
+To verify if the NSGI transformation `EPSG:7931` -> `EPSG:7415` works as expected, run the following in a terminal:
 
 ```bash
 docker build -f validate/Dockerfile -t nsgi/pyproj:3.6.0 .
-
 docker run --rm -it nsgi/pyproj:3.6.0 bash
 ```
 
-Running the following python code
+This will run the following Python code:
 
 ```python
 from pyproj import Transformer
@@ -95,20 +93,20 @@ etrf = Transformer.from_crs("EPSG:7931", "EPSG:7415")
 "{0[0]:.4f}, {0[1]:.4f}, {0[2]:.4f}".format(etrf.transform(52.115330444,7.684748554, 41.4160))
 ```
 
-Would result into the following output `'312352.6004, 461058.5812, -2.5206'`
+And should result in the following output: `'312352.6004, 461058.5812, -2.5206'`
 
-Running the full validation file can be done through the following command
+Running the full validation file can be done by running the following:
 
 ```bash
 docker run -d --rm -v `pwd`/validate:/validate nsgi/pyproj:3.6.0 python ./validate/validate.py
 ```
 
-This will result in a `zelfvalidatie.csv` containing the results. When correct
+This should output a `validate/zelfvalidation.csv` file containing the results. When correct
 the result would show no (or minimal) deviation.
 
 ## LICENSE
 
-The SQL used in this repository is licensed under a [CC-BY license](LICENSE).
+The SQL used in this repository is licensed under a [CC-BY license](./LICENSE).
 
 All other code in this repository is licensed under the [MIT
-license](LICENSE-CODE).
+license](./LICENSE-CODE).
