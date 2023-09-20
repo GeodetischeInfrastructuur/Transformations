@@ -1,13 +1,19 @@
 # Transformations
 
-[![GitHub license](https://img.shields.io/github/license/GeodetischeInfrastructuur/Transformations)](https://github.com/GeodetischeInfrastructuur/Transformations/blob/master/LICENSE)
+[![GitHub
+license](https://img.shields.io/github/license/GeodetischeInfrastructuur/Transformations)](https://github.com/GeodetischeInfrastructuur/Transformations/blob/master/LICENSE)
 
 This repository contains the SQL which adds the following to the proj.db:
 
 1. the NSGI as an authority
-2. and tranformations for:
+2. and the tranformations for:
     1. ETRF2000 to RDNAP Hybrid
     2. ETRF2000 -> RD
+
+These transformations are the onces as defined by the
+[NSGI](https://www.nsgi.nl/) (Nederlandse Samenwerkingsverband Geodetische
+Infrastructuur). In the future additional transformations will be added to this
+repository.
 
 ## Docker
 
@@ -39,7 +45,8 @@ When running the following command:
 projinfo -s EPSG:28992 -t EPSG:9067 --authority NSGI --hide-ballpark -o PROJ
 ```
 
-Should result in the following result, verifing the expected transformation is available:
+Should result in the following result, verifing the expected transformation is
+available:
 
 ```bash
 Candidate operations found: 1
@@ -103,4 +110,5 @@ the result would show no (or minimal) deviation.
 
 The SQL used in this repository is licensed under a [CC-BY license](LICENSE).
 
-All other code in this repository is licensed under the [MIT license](LICENSE-CODE).
+All other code in this repository is licensed under the [MIT
+license](LICENSE-CODE).
