@@ -25,13 +25,13 @@ docker build -t nsgi/proj:9.3.0 .
 
 ### Run
 
-Starting a interactive terminal run:
+To start an interactive terminal inside the container run:
 
 ```bash
 docker run -it --rm --name nsgi-proj-9.3.0 nsgi/proj:9.3.0
 ```
 
-Run directly from console:
+To invoke projinfo from your current terminal sessions run:
 
 ```bash
 docker run --rm --name nsgi-proj-9.3.0 nsgi/proj:9.3.0 projinfo
@@ -39,14 +39,14 @@ docker run --rm --name nsgi-proj-9.3.0 nsgi/proj:9.3.0 projinfo
 
 ### Verify
 
-When running the following command:
+To verify whether the expected NSGI transformation from EPSG:28992 to EPSG:9067
+is available in PROJ run the following command:
 
 ```bash
 projinfo -s EPSG:28992 -t EPSG:9067 --authority NSGI --hide-ballpark -o PROJ
 ```
 
-Should result in the following result, verifing the expected transformation is
-available:
+This should output the following transformation definition:
 
 ```bash
 Candidate operations found: 1
