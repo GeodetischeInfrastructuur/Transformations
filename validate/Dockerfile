@@ -8,4 +8,4 @@ RUN apt-get update && \
 RUN pip install pyproj==3.6.0
 
 # COPY the transformation grids, the modified proj.db and all the other proj files
-COPY --from=nsgi/proj:9.2.1 /usr/share/proj/ /usr/local/lib/python3.11/site-packages/pyproj/proj_dir/share/proj/
+COPY --from=nsgi/proj:9.3.0 /usr/share/proj/ /usr/local/lib/python3.11/site-packages/pyproj/proj_dir/share/proj/
