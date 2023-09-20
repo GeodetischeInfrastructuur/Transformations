@@ -21,4 +21,4 @@ for _, point in enumerate(Z001.readlines()):
 
     result += (f'{nr},{lat_diff:.9f},{lon_diff:.9f},{h_diff:.4f},{rdx_diff:.4f},{rdy_diff:.4f},{nap_diff:.4f},{lat},{lon},{h},{rdx},{rdy},{nap},{lat_calc:.9f},{lon_calc:.9f},{h_calc:.4f},{rdx_calc:.4f},{rdy_calc:.4f},{nap_calc:.4f}\n')
 
-open('./validate/zelfvalidatie.csv', 'w').write(result)
+open('./validate/self-validation.csv', 'w').write(result)
