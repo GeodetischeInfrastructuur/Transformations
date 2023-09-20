@@ -2,7 +2,7 @@
 
 [![GitHub license](https://img.shields.io/github/license/GeodetischeInfrastructuur/Transformations)](https://github.com/GeodetischeInfrastructuur/Transformations/blob/master/LICENSE)
 
-This repository contains the SQL which adds to the proj.db:
+This repository contains the SQL which adds the following to the proj.db:
 
 1. the NSGI as an authority
 2. and tranformations for:
@@ -14,7 +14,7 @@ This repository contains the SQL which adds to the proj.db:
 ### Build
 
 ```bash
-docker build -t nsgi/proj:9.2.1 .
+docker build -t nsgi/proj:9.3.0 .
 ```
 
 ### Run
@@ -22,13 +22,13 @@ docker build -t nsgi/proj:9.2.1 .
 Starting a interactive terminal run:
 
 ```bash
-docker run -it --rm --name nsgi-proj-9.2.1 nsgi/proj:9.2.1
+docker run -it --rm --name nsgi-proj-9.3.0 nsgi/proj:9.3.0
 ```
 
 Run directly from console:
 
 ```bash
-docker run --rm --name nsgi-proj-9.2.1 nsgi/proj:9.2.1 projinfo
+docker run --rm --name nsgi-proj-9.3.0 nsgi/proj:9.3.0 projinfo
 ```
 
 ### Verify
@@ -75,7 +75,7 @@ solutions/implementations, like with
 ### Test
 
 ```bash
-docker build -f validate/Dockerfile.pyproj -t nsgi/pyproj:3.6.0 .
+docker build -f validate/Dockerfile -t nsgi/pyproj:3.6.0 .
 
 docker run --rm -it nsgi/pyproj:3.6.0 bash
 ```
