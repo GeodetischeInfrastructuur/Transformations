@@ -10,14 +10,18 @@ This repository contains:
       2. Transformations (with authority NSGI) for:
             1. ETRF2000 to RDNAP Hybrid
             2. ETRF2000 to RD
-2. A Dockerfile with [PROJ](https://proj.org/en/9.3/) configured to use these NSGI transformation definitions
+2. A Dockerfile with [PROJ](https://proj.org/en/9.3/) configured to use these
+   NSGI transformation definitions
 
-These transformations are defined by [NSGI](https://www.nsgi.nl/) (Nederlandse Samenwerkingsverband Geodetische
-Infrastructuur). In the future additional transformations will be added to this repository.
+These transformations are defined by [NSGI](https://www.nsgi.nl/) (Nederlandse
+Samenwerkingsverband Geodetische Infrastructuur). In the future additional
+transformations will be added to this repository.
 
 ## Docker
 
-The Docker image is intended to be used as a base image, for applications that layer on top of PROJ; for instance use it with [pyproj](https://pyproj4.github.io/pyproj/stable/index.html).
+The Docker image is intended to be used as a base image, for applications that
+layer on top of PROJ; for instance use it with
+[pyproj](https://pyproj4.github.io/pyproj/stable/index.html).
 
 ### Build
 
@@ -39,9 +43,10 @@ To invoke `projinfo` from your current terminal sessions run:
 docker run --rm --name nsgi-proj-9.3.0 nsgi/proj:9.3.0 projinfo
 ```
 
-### Verify
+## Verify
 
-To verify whether the expected NSGI transformation from `EPSG:28992` to `EPSG:9067`
+To verify whether the expected NSGI transformation from `EPSG:28992` to
+`EPSG:9067`
 
 is available in PROJ run the following command:
 
@@ -76,33 +81,51 @@ This should output the following transformation definition:
 >  +step +proj=unitconvert +xy_in=rad +xy_out=deg
 >```
 
-### Test
+## Test
 
-To verify if the NSGI transformation `EPSG:7931` -> `EPSG:7415` works as expected, run the following in a terminal:
+To verify if the NSGI transformation `EPSG:7931` -> `EPSG:7415` works as
+expected, run the following in a terminal:
 
 ```bash
 docker build -f validate/Dockerfile -t nsgi/pyproj:3.6.0 .
-docker run --rm -it nsgi/pyproj:3.6.0 bash
+docker run --rm -it nsgi/pyproj:3.6.0 python
 ```
 
-This will run the following Python code:
+Then run the following Python code:
 
 ```python
 from pyproj import Transformer
 etrf = Transformer.from_crs("EPSG:7931", "EPSG:7415")
-"{0[0]:.4f}, {0[1]:.4f}, {0[2]:.4f}".format(etrf.transform(52.115330444,7.684748554, 41.4160))
+"{0[0]:.4f} {0[1]:.4f} {0[2]:.4f}".format(etrf.transform(52.115330444, 7.684748554, 41.4160))
 ```
 
-And should result in the following output: `'312352.6004, 461058.5812, -2.5206'`
-
-Running the full validation file can be done by running the following:
+Alternatively the following [cs2cs](https://proj.org/en/9.3/apps/cs2cs.html) cmd
+can be used:
 
 ```bash
-docker run -d --rm -v `pwd`/validate:/validate nsgi/pyproj:3.6.0 python ./validate/validate.py
+cs2cs EPSG:7931 EPSG:7415 <<< "52.115330444 7.684748554 41.4160"
 ```
 
-This should output a `validate/zelfvalidation.csv` file containing the results. When correct
-the result would show no (or minimal) deviation.
+Both should result in the following output: `'312352.6004 461058.5812 -2.5206'`
+
+## Validation
+
+Running the full validation file can be done by running the following docker run
+cmd.
+
+```bash
+docker run -d --rm -v `pwd`/validate:/validate nsgi/pyproj:3.6.0 python ./validate/validate.py ./validate/Z001_ETRS89andRDNAP.txt ./validate/validation-output.csv
+```
+
+Or by running the python script directly.
+
+```bash
+cd validate
+python validate.py Z001_ETRS89andRDNAP.txt validation-output.csv
+```
+
+This should output a `validate/validation-output.csv` file containing the
+results. When correct the result would show no (or minimal) deviation.
 
 ## LICENSE
 
