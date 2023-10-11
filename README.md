@@ -10,14 +10,18 @@ This repository contains:
       2. Transformations (with authority NSGI) for:
             1. ETRF2000 to RDNAP Hybrid
             2. ETRF2000 to RD
-2. A Dockerfile with [PROJ](https://proj.org/en/9.3/) configured to use these NSGI transformation definitions
+2. A Dockerfile with [PROJ](https://proj.org/en/9.3/) configured to use these
+   NSGI transformation definitions
 
-These transformations are defined by [NSGI](https://www.nsgi.nl/) (Nederlandse Samenwerkingsverband Geodetische
-Infrastructuur). In the future additional transformations will be added to this repository.
+These transformations are defined by [NSGI](https://www.nsgi.nl/) (Nederlandse
+Samenwerkingsverband Geodetische Infrastructuur). In the future additional
+transformations will be added to this repository.
 
 ## Docker
 
-The Docker image is intended to be used as a base image, for applications that layer on top of PROJ; for instance use it with [pyproj](https://pyproj4.github.io/pyproj/stable/index.html).
+The Docker image is intended to be used as a base image, for applications that
+layer on top of PROJ; for instance use it with
+[pyproj](https://pyproj4.github.io/pyproj/stable/index.html).
 
 ### Build
 
@@ -41,7 +45,8 @@ docker run --rm --name nsgi-proj-9.3.0 nsgi/proj:9.3.0 projinfo
 
 ### Verify
 
-To verify whether the expected NSGI transformation from `EPSG:28992` to `EPSG:9067`
+To verify whether the expected NSGI transformation from `EPSG:28992` to
+`EPSG:9067`
 
 is available in PROJ run the following command:
 
@@ -78,7 +83,8 @@ This should output the following transformation definition:
 
 ### Test
 
-To verify if the NSGI transformation `EPSG:7931` -> `EPSG:7415` works as expected, run the following in a terminal:
+To verify if the NSGI transformation `EPSG:7931` -> `EPSG:7415` works as
+expected, run the following in a terminal:
 
 ```bash
 docker build -f validate/Dockerfile -t nsgi/pyproj:3.6.0 .
@@ -101,8 +107,13 @@ Running the full validation file can be done by running the following:
 docker run -d --rm -v `pwd`/validate:/validate nsgi/pyproj:3.6.0 python ./validate/validate.py
 ```
 
-This should output a `validate/zelfvalidation.csv` file containing the results. When correct
-the result would show no (or minimal) deviation.
+This should output a `validate/zelfvalidation.csv` file containing the results.
+When correct the result would show no (or minimal) deviation.
+
+## Remove
+
+By running the `rollback.sql`, the entries made by the nl_nsgi.sql are removed
+from the given proj.db.
 
 ## LICENSE
 
