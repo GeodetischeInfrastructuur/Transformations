@@ -1,4 +1,7 @@
-from pyproj import Transformer
+from pyproj import Transformer, datadir
+import sys
+
+print("PATH of the used PROJ: " + datadir.get_data_dir())
 
 rdnap2etrf = Transformer.from_crs("EPSG:7415", "EPSG:7931")
 etrf2rdnap = Transformer.from_crs("EPSG:7931", "EPSG:7415")
@@ -30,7 +33,7 @@ result = (
     + "\n"
 )
 
-with open("/validate/Z001_ETRS89andRDNAP.txt", "r") as Z001:
+with open(sys.argv[1], "r") as Z001:
  
     for _, point in enumerate(Z001.readlines()):
         nr, lat, lon, h, rdx, rdy, nap = point.split()
@@ -57,5 +60,5 @@ with open("/validate/Z001_ETRS89andRDNAP.txt", "r") as Z001:
  {lon},{h},{rdx},{rdy},{nap},{lat_calc:.9f},{lon_calc:.9f},\
  {h_calc:.4f},{rdx_calc:.4f},{rdy_calc:.4f},{nap_calc:.4f}\n"
 
-with open("/validate/self-validation.csv", "w") as f:
+with open(sys.argv[2], "w") as f:    
     f.write(result)
