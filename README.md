@@ -6,7 +6,21 @@ license](https://img.shields.io/github/license/GeodetischeInfrastructuur/Transfo
 This repository contains:
 
 1. SQL which adds to the [PROJ](https://proj.org/en/9.3/) proj.db:
-      1. NSGI as an authority
+   * added NSGI to authority references
+   * added extents of NSGI transformations
+   * added additional NL datum (AGRS.NL)
+   * added additional NL crss
+   * added transformation:
+     * ETRF2000 --> AGRS2010
+     * AGRS2010 -> NAP height
+     * RD Bessel -> pseudo RD Bessel
+     * AGRS2010 -> pseudo RD Bessel
+     * RD Bessel --> 2D ETRF2000
+     * ITRF2014 -> WGS 84
+     * ETRF2000 -> WGS 84
+     * RD Bessel --> 2D ITRF2014
+     * AGRS2010 --> 2D ITRF2014
+     * ETRS89 --> ETRF2000
 
 1. A Dockerfile with [PROJ](https://proj.org/en/9.3/) configured to use this
    NSGI authority as a base
@@ -15,9 +29,6 @@ These will for the base for the transformations that are defined by
 [NSGI](https://www.nsgi.nl/) (Nederlandse Samenwerkingsverband Geodetische
 Infrastructuur). In the future additional transformations will be added to this
 repository.
-
-> :warning: This is a initial release putting the different components and
-> placeholders in place and will be modified in the future.
 
 ## Docker
 
