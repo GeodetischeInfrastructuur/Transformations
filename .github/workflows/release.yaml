@@ -25,8 +25,8 @@ jobs:
           
       - name: 'Build Image'
         run: |
-          docker build . --tag ghcr.io/${{ github.event.org.login }}/${{ github.event.repository.name }}:latest
-          docker push ghcr.io/${{ github.event.org.login }}/${{ github.event.repository.name }}:latest
-          docker tag ghcr.io/${{ github.event.org.login }}/${{ github.event.repository.name }}:latest ghcr.io/${{ github.event.org.login }}/${{ github.event.repository.name }}:${{ github.event.release.tag_name }}
-          docker push ghcr.io/${{ github.event.org.login }}/${{ github.event.repository.name }}:${{ github.event.release.tag_name }}
+          docker build . --tag ghcr.io/${{ github.repository }}:latest
+          docker push ghcr.io/${{ github.repository }}:latest
+          docker tag ghcr.io/${{ github.repository }}:latest ghcr.io/${{ github.repository }}:${{ github.event.release.tag_name }}
+          docker push ghcr.io/${{ github.repository }}:${{ github.event.release.tag_name }}
 
