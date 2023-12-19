@@ -17,7 +17,8 @@ jobs:
         shell: bash
         id: lowercaserepo
         run: |
-          echo "REPO_LC=${${{ github.repository }},,}" >> $GITHUB_OUTPUT
+          GH_REPO=${{ github.repository }}
+          echo "REPO_LC=${GH_REPO,,}" >> $GITHUB_OUTPUT
 
       - name: Checkout repository
         uses: actions/checkout@v4
