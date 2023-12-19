@@ -724,7 +724,7 @@ VALUES
         'NSGI',
         'EXTENT_3D_RDNAPTRANS2018',
         'EPSG',
-        '1181' -- Geodesy, cadastre, engineering survey, topographic mapping.
+        '1181'
     );
 
 -------------------------------------------------------
@@ -748,16 +748,16 @@ INSERT INTO
 VALUES
     (
         'NSGI',
-        'RD_BESSEL_TO_ETRF2000_VARIANT_1', -- operation auth+code
-        'Rd Bessel to ETRF2000', -- name
-        'Transformation based on RDNAPTRANS2018 documentation', -- description
+        'RD_BESSEL_TO_ETRF2000_VARIANT_1',
+        'Rd Bessel to ETRF2000',
+        'Transformation based on RDNAPTRANS2018 documentation',
         'EPSG',
-        '4289', -- source_crs:  RD Bessel
+        '4289',
         'EPSG',
-        '9067', -- target_crs:   ETRF2000
-        0.001, -- accuracy
-        'NSGI 2019', -- operation_version
-        0 -- deprecated
+        '9067',
+        0.001,
+        'NSGI 2019',
+        0
     );
 
 INSERT INTO
@@ -811,9 +811,9 @@ VALUES
         'NSGI',
         'RD_BESSEL_TO_ETRF2000_VARIANT_1',
         'EPSG',
-        '1262', -- World
+        '1262',
         'EPSG',
-        '1181' -- Geodesy, cadastre, engineering survey, topographic mapping.
+        '1181'
     );
 
 -------------------------------------------------------
