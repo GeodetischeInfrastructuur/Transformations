@@ -13,6 +13,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: downcase REPO
+        shell: bash
+        id: lowercaserepo
+        run: |
+          echo "REPO_LC=${${{ github.repository }},,}" >> $GITHUB_OUTPUT
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -25,8 +31,8 @@ jobs:
           
       - name: 'Build Image'
         run: |
-          docker build . --tag ghcr.io/${{ github.repository }}:latest
-          docker push ghcr.io/${{ github.repository }}:latest
-          docker tag ghcr.io/${{ github.repository }}:latest ghcr.io/${{ github.repository }}:${{ github.event.release.tag_name }}
-          docker push ghcr.io/${{ github.repository }}:${{ github.event.release.tag_name }}
+          docker build . --tag ghcr.io/${{ steps.lowercaserepo.outputs.REPO_LC }}:latest
+          docker push ghcr.io/${{ steps.lowercaserepo.outputs.REPO_LC }}:latest
+          docker tag ghcr.io/${{ steps.lowercaserepo.outputs.REPO_LC }}:latest ghcr.io/${{ steps.lowercaserepo.outputs.REPO_LC }}:${{ github.event.release.tag_name }}
+          docker push ghcr.io/${{ steps.lowercaserepo.outputs.REPO_LC }}:${{ github.event.release.tag_name }}
 
