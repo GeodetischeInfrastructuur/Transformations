@@ -39,7 +39,7 @@ layer on top of PROJ; for instance use it with
 ### Build
 
 ```bash
-docker build -t nsgi/proj:9.3.1 .
+docker build -t geodetischeinfrastructuur/transformations:1.0.0 .
 ```
 
 ### Run
@@ -47,13 +47,13 @@ docker build -t nsgi/proj:9.3.1 .
 To start an interactive terminal inside the container run:
 
 ```bash
-docker run -it --rm --name nsgi-proj nsgi/proj:9.3.1
+docker run -it --rm --name nsgi-proj ghcr.io/geodetischeinfrastructuur/transformations:1.0.0
 ```
 
 To invoke `projinfo` from your current terminal sessions run:
 
 ```bash
-docker run --rm --name nsgi-proj nsgi/proj:9.3.1 projinfo
+docker run --rm --name nsgi-proj ghcr.io/geodetischeinfrastructuur/transformations:1.0.0 projinfo
 ```
 
 ## Test
@@ -62,8 +62,8 @@ To verify if the NSGI transformation `EPSG:7931` -> `EPSG:7415` works as
 expected, run the following in a terminal:
 
 ```bash
-docker build -f validate/Dockerfile -t nsgi/pyproj:3.6.1 .
-docker run --rm -it nsgi/pyproj:3.6.1 python
+docker build -f validate/Dockerfile -t geodetischeinfrastructuur/pyproj:3.6.1 .
+docker run --rm -it geodetischeinfrastructuur/pyproj:3.6.1 python
 ```
 
 Then run the following Python code:
@@ -89,7 +89,7 @@ Running the full validation file can be done by running the following docker run
 cmd.
 
 ```bash
-docker run -d --rm -v `pwd`/validate:/validate nsgi/pyproj:3.6.1 python ./validate/validate.py ./validate/Z001_ETRS89andRDNAP.txt ./validate/validation-output.csv
+docker run -d --rm -v `pwd`/validate:/validate geodetischeinfrastructuur/pyproj:3.6.1 python ./validate/validate.py ./validate/Z001_ETRS89andRDNAP.txt ./validate/validation-output.csv
 ```
 
 Or by running the python script directly.
