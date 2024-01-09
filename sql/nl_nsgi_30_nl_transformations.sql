@@ -146,7 +146,7 @@ VALUES
         'EPSG',
         '8666',
         'Geoid (height correction) model file',
-        'nlgeo2018.gtx',
+        'nlgeo2018.gtx,null',
         NULL,
         NULL,
         NULL,
