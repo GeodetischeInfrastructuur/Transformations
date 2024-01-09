@@ -5,9 +5,14 @@ RUN apt update \
     && apt install -y \
     sqlite3
 
-ADD sql          /usr/share/proj/nl_nsgi_sql
+ADD sql /usr/share/proj/nl_nsgi_sql
 
-# Adds the NSGI transformations to the proj.db
-# TODO: The nl_ngsi.sql is also added in the /user/share/proj dir
-#       for completion, but we need to find a 'better' place for it.
-RUN for f in /usr/share/proj/nl_nsgi_sql/nl_nsgi_*.sql; do echo $f;cat $f | sqlite3 /usr/share/proj/proj.db;done
+RUN cat /usr/share/proj/nl_nsgi_sql/nl_nsgi_00_authorities.sql | sqlite3 /usr/share/proj/proj.db
+RUN cat /usr/share/proj/nl_nsgi_sql/nl_nsgi_10_copy_transformations_from_projdb.sql | sqlite3 /usr/share/proj/proj.db
+RUN cat /usr/share/proj/nl_nsgi_sql/nl_nsgi_20_datum_and_crs.sql | sqlite3 /usr/share/proj/proj.db
+RUN cat /usr/share/proj/nl_nsgi_sql/nl_nsgi_30_nl_transformations.sql | sqlite3 /usr/share/proj/proj.db
+RUN cat /usr/share/proj/nl_nsgi_sql/nl_nsgi_40_europe_transformations.sql | sqlite3 /usr/share/proj/proj.db
+RUN cat /usr/share/proj/nl_nsgi_sql/nl_nsgi_50_wgs84_null_transformations.sql | sqlite3 /usr/share/proj/proj.db
+
+RUN cp /usr/share/proj/proj.db /usr/share/proj/proj.global.time.dependent.transformations.db
+RUN cat /usr/share/proj/nl_nsgi_sql/nl_nsgi_60_global_time_dependent_transformations.sql | sqlite3 /usr/share/proj/proj.global.time.dependent.transformations.db

@@ -3,32 +3,48 @@
 [![GitHub
 license](https://img.shields.io/github/license/GeodetischeInfrastructuur/Transformations)](https://github.com/GeodetischeInfrastructuur/Transformations/blob/master/LICENSE)
 
-This repository contains:
+This repository contains a modified proj.db that implements the following
+transformations according to the recommendations of the NSGI (see image below).
+
+![transformations](supported-transformations-nsgi.drawio.svg)
 
 1. SQL which adds to the [PROJ](https://proj.org/en/9.3/) proj.db:
    * added NSGI to authority references
    * added extents of NSGI transformations
    * added additional NL datum (AGRS.NL)
    * added additional NL crss
-   * added transformation:
-     * ETRF2000 --> AGRS2010
-     * AGRS2010 -> NAP height
-     * RD Bessel -> pseudo RD Bessel
-     * AGRS2010 -> pseudo RD Bessel
-     * RD Bessel --> 2D ETRF2000
-     * ITRF2014 -> WGS 84
-     * ETRF2000 -> WGS 84
-     * RD Bessel --> 2D ITRF2014
-     * AGRS2010 --> 2D ITRF2014
-     * ETRS89 --> ETRF2000
+   * added additional NSGI transformations
 
-1. A Dockerfile with [PROJ](https://proj.org/en/9.3/) configured to use this
+2. A Dockerfile with [PROJ](https://proj.org/en/9.3/) configured to use this
    NSGI authority as a base
 
 These will for the base for the transformations that are defined by
 [NSGI](https://www.nsgi.nl/) (Nederlandse Samenwerkingsverband Geodetische
 Infrastructuur). In the future additional transformations will be added to this
 repository.
+
+> :warning: this repository contains 2 proj.db. The first (the default)
+> `proj.db` has the sql scripts nl_nsgi_00.. till ns_nsgi_50.. applied. The
+> second `proj.global.time.dependent.transformations.db` has the sql applied in
+> the script 'nl_nsgi_60_global_time_dependent_transformations.sql' adding time
+> dependent transformations. For this second one there are additional rules that
+> need to be taken into account, regarding the usage of a epoch. And that is to
+> provide a input epoch and not use a transformations default epoch when
+> applicable. When one wants to use this second proj.db this can be done in
+> multiple ways.
+>
+> Through a move command
+>
+> ```bash
+> mv proj.db proj.db.bak
+> mv proj.global.time.dependent.transformations.db proj.db
+> ```
+>
+> Or through the creating of a symbolic link
+>
+> ```bash
+> ln -s proj.global.time.dependent.transformations.db proj.db
+> ```
 
 ## Docker
 

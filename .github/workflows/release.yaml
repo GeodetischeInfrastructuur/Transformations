@@ -42,8 +42,20 @@ jobs:
           docker cp "${cont_id}:/usr/share/proj/proj.db" proj.db
           docker rm "$cont_id"
 
+      - name: 'Export proj.global.time.dependent.transformations.db as package from Docker image'
+        run: |
+          cont_id=$(docker create ghcr.io/${{ steps.lowercaserepo.outputs.REPO_LC }}:${{ github.event.release.tag_name }})
+          docker cp "${cont_id}:/usr/share/proj/proj.global.time.dependent.transformations.db" proj.global.time.dependent.transformations.db
+          docker rm "$cont_id"
+
       - name: 'Upload proj.db'
         env:
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           gh release upload ${{ github.event.release.tag_name }} proj.db
+
+      - name: 'Upload proj.global.time.dependent.transformations.db'
+        env:
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: |
+          gh release upload ${{ github.event.release.tag_name }} proj.global.time.dependent.transformations.db
