@@ -55,7 +55,7 @@ layer on top of PROJ; for instance use it with
 ### Build
 
 ```bash
-docker build -t geodetischeinfrastructuur/transformations:1.0.1 .
+docker build -t ghcr.io/geodetischeinfrastructuur/transformations:1.0.1 .
 ```
 
 ### Run
