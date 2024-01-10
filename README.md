@@ -118,11 +118,6 @@ python validate.py Z001_ETRS89andRDNAP.txt validation-output.csv
 This should output a `validate/validation-output.csv` file containing the
 results. When correct the result would show no (or minimal) deviation.
 
-## Remove
-
-By running the `rollback.sql`, the entries made by the nl_nsgi.sql are removed
-from the given proj.db.
-
 ## LICENSE
 
 The SQL used in this repository is licensed under a [CC-BY license](./LICENSE).
