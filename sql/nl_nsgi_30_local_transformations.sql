@@ -326,3 +326,86 @@ VALUES
         '1181'
     );
 
+--- Bonaire height
+  -------------------------------------------------------
+--     Transformation: AGRS2010 -> NAP height
+-------------------------------------------------------
+INSERT INTO
+    "grid_transformation" (
+        auth_name,
+        code,
+        name,
+        description,
+        method_auth_name,
+        method_code,
+        method_name,
+        source_crs_auth_name,
+        source_crs_code,
+        target_crs_auth_name,
+        target_crs_code,
+        accuracy,
+        grid_param_auth_name,
+        grid_param_code,
+        grid_param_name,
+        grid_name,
+        grid2_param_auth_name,
+        grid2_param_code,
+        grid2_param_name,
+        grid2_name,
+        interpolation_crs_auth_name,
+        interpolation_crs_code,
+        operation_version,
+        deprecated
+    )
+VALUES
+    (
+        'NSGI',
+        'Bonaire_DPnet_to_KADpeil',
+        'Bonaire DPnet to KADpeil height',
+        'Transformation based on BESTRANS documentation',
+        'EPSG',
+        '9665',
+        'Geographic3D to GravityRelatedHeight (gtx)',
+        'NSGI',
+        'DPnet_Bonaire_GEOGRAPHIC_3D',
+        'NSGI',
+        'KADpeil_Bonaire',
+        0.2,
+        'EPSG',
+        '8666',
+        'Geoid (height correction) model file',
+        'bq_nsgi_bongeo2004.gtx',
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        'NSGI-Nld 2023',
+        0
+    );
+
+INSERT INTO
+    "usage" (
+        auth_name,
+        code,
+        object_table_name,
+        object_auth_name,
+        object_code,
+        extent_auth_name,
+        extent_code,
+        scope_auth_name,
+        scope_code
+    )
+VALUES
+    (
+        'NSGI',
+        'Bonaire_DPnet_to_KADpeil_USAGE',
+        'grid_transformation',
+        'NSGI',
+        'Bonaire_DPnet_to_KADpeil',
+        'EPSG',
+        '3805',
+        'EPSG',
+        '1027'
+    );

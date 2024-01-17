@@ -389,7 +389,7 @@ VALUES
         'EPSG',
         '6500',
         'NSGI',
-        'AGRS.NL',
+        'DPnet',
         NULL,
         0
     );
@@ -443,7 +443,7 @@ VALUES
         'EPSG',
         '6423',
         'NSGI',
-        'AGRS.NL',
+        'DPnet',
         NULL,
         0
     );
@@ -497,7 +497,7 @@ VALUES
         'EPSG',
         '6422',
         'NSGI',
-        'AGRS.NL',
+        'DPnet',
         NULL,
         0
     );
@@ -527,6 +527,13 @@ VALUES
         '1027'
     );
     
+INSERT INTO "vertical_datum" VALUES('NSGI','KADpeil_Bonaire_Datum','KAD Peil Bonaire',NULL,NULL,NULL,NULL,NULL,0);
+INSERT INTO "usage" VALUES('NSGI','KADpeil_Bonaire_Datum_USAGE','vertical_datum','NSGI','KADpeil_Bonaire_Datum','EPSG','3805','EPSG','1027');
+INSERT INTO "vertical_crs" VALUES('NSGI','KADpeil_Bonaire','KADpeil_Bonaire',NULL,'EPSG','6499','EPSG','5109',0);
+INSERT INTO "usage" VALUES('NSGI','KADpeil_Bonaire_USAGE','vertical_crs','NSGI','KADpeil_Bonaire','EPSG','3805','EPSG','1027');
+
+
+
 --- Saba
 INSERT INTO
     "geodetic_crs" (
@@ -552,7 +559,7 @@ VALUES
         'EPSG',
         '6500',
         'NSGI',
-        'AGRS.NL',
+        'DPnet',
         NULL,
         0
     );
@@ -606,7 +613,7 @@ VALUES
         'EPSG',
         '6423',
         'NSGI',
-        'AGRS.NL',
+        'DPnet',
         NULL,
         0
     );
@@ -660,7 +667,7 @@ VALUES
         'EPSG',
         '6422',
         'NSGI',
-        'AGRS.NL',
+        'DPnet',
         NULL,
         0
     );
@@ -716,7 +723,7 @@ VALUES
         'EPSG',
         '6500',
         'NSGI',
-        'AGRS.NL',
+        'DPnet',
         NULL,
         0
     );
@@ -770,7 +777,7 @@ VALUES
         'EPSG',
         '6423',
         'NSGI',
-        'AGRS.NL',
+        'DPnet',
         NULL,
         0
     );
@@ -824,7 +831,7 @@ VALUES
         'EPSG',
         '6422',
         'NSGI',
-        'AGRS.NL',
+        'DPnet',
         NULL,
         0
     );
@@ -873,3 +880,7 @@ INSERT INTO "usage" VALUES('NSGI','DPnet_Saba_USAGE','projected_crs','NSGI','DPn
 
 INSERT INTO "projected_crs" VALUES('NSGI','DPnet_St_Eustatius','Local coordinate system of St_Eustatius',NULL,'EPSG','4499','NSGI','DPnet_St_Eustatius_GEOGRAPHIC_2D','NSGI','DPnet_St_Eustatius_conversion',NULL,0);
 INSERT INTO "usage" VALUES('NSGI','DPnet_St_Eustatius_USAGE','projected_crs','NSGI','DPnet_St_Eustatius','EPSG','3805','EPSG','1027');
+
+--- Compund crs
+INSERT INTO "compound_crs" VALUES('NSGI','DPnet_KADpeil_Bonaire','DPnet and KADpeil Bonaire',NULL,'NSGI','DPnet_Bonaire','NSGI','KADpeil_Bonaire',0);
+INSERT INTO "usage" VALUES('NSGI','DPnet_KADpeil_Bonaire_USAGE','compound_crs','NSGI','DPnet_KADpeil_Bonaire','EPSG','3805','EPSG','1027');
