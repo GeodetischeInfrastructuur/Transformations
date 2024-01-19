@@ -422,4 +422,171 @@ INSERT INTO grid_alternatives(original_grid_name,
                               url, direct_download, open_license, directory)
 VALUES
 ('bq_nsgi_bongeo2004.gtx','bq_nsgi_bongeo2004.tif','bq_nsgi_bongeo2004.gtx','GTiff','geoid_like',0,NULL,'https://gnss-data.kadaster.nl/misc/grid/bq_nsgi_bongeo2004.tif',1,1,NULL),
-('nllat2018.gtx','','nllat2018 .gtx','GTX','geoid_like',0,NULL,'https://gnss-data.kadaster.nl/misc/grid/nllat2018.gtx',1,1,NULL)
+('nllat2018.gtx','','nllat2018 .gtx','GTX','geoid_like',0,NULL,'https://gnss-data.kadaster.nl/misc/grid/nllat2018.gtx',1,1,NULL);
+
+
+-------------------------------------------------------
+--     Transformation: ETRS89 -> ETRS89 + LAT NL depth
+-------------------------------------------------------
+INSERT INTO
+    "grid_transformation" (
+        auth_name,
+        code,
+        name,
+        description,
+        method_auth_name,
+        method_code,
+        method_name,
+        source_crs_auth_name,
+        source_crs_code,
+        target_crs_auth_name,
+        target_crs_code,
+        accuracy,
+        grid_param_auth_name,
+        grid_param_code,
+        grid_param_name,
+        grid_name,
+        grid2_param_auth_name,
+        grid2_param_code,
+        grid2_param_name,
+        grid2_name,
+        interpolation_crs_auth_name,
+        interpolation_crs_code,
+        operation_version,
+        deprecated
+    )
+VALUES
+    (
+        'NSGI',
+        'ETRS89_TO_ETRS89_LAT_NL',
+        'ETRS89 to ETRS89 and LAT NL depth',
+        '',
+        'EPSG',
+        '1122',
+        'Geog3D to Geog2D+Depth (gtx)',
+        'EPSG',
+        '4937',
+        'EPSG',
+        '9289',
+        0.1,
+        'EPSG',
+        '8666',
+        'Geoid (height correction) model file',
+        'nllat2018.gtx',
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        'EPSG',
+        '4258',
+        'NSGI-Nld 2018',
+        0
+    );
+
+INSERT INTO
+    "usage" (
+        auth_name,
+        code,
+        object_table_name,
+        object_auth_name,
+        object_code,
+        extent_auth_name,
+        extent_code,
+        scope_auth_name,
+        scope_code
+    )
+VALUES
+    (
+        'NSGI',
+        'ETRS89_TO_ETRS89_LAT_NL_USAGE',
+        'grid_transformation',
+        'NSGI',
+        'ETRS89_TO_ETRS89_LAT_NL',
+        'EPSG',
+        '1630',
+        'EPSG',
+        '1277'
+    );
+    
+-------------------------------------------------------
+--     Transformation: ETRS89 -> ETRS89 + LAT NL depth
+-------------------------------------------------------
+INSERT INTO
+    "grid_transformation" (
+        auth_name,
+        code,
+        name,
+        description,
+        method_auth_name,
+        method_code,
+        method_name,
+        source_crs_auth_name,
+        source_crs_code,
+        target_crs_auth_name,
+        target_crs_code,
+        accuracy,
+        grid_param_auth_name,
+        grid_param_code,
+        grid_param_name,
+        grid_name,
+        grid2_param_auth_name,
+        grid2_param_code,
+        grid2_param_name,
+        grid2_name,
+        interpolation_crs_auth_name,
+        interpolation_crs_code,
+        operation_version,
+        deprecated
+    )
+VALUES
+    (
+        'NSGI',
+        'ETRS89_TO_LAT_NL',
+        'ETRS89 to LAT NL depth',
+        '',
+        'EPSG',
+        '1121',
+        'Geographic3D to Depth (gtx)',
+        'EPSG',
+        '4937',
+        'EPSG',
+        '9287',
+        0.1,
+        'EPSG',
+        '8666',
+        'Geoid (height correction) model file',
+        'nllat2018.gtx',
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        'NSGI-Nld 2018',
+        0
+    );
+
+INSERT INTO
+    "usage" (
+        auth_name,
+        code,
+        object_table_name,
+        object_auth_name,
+        object_code,
+        extent_auth_name,
+        extent_code,
+        scope_auth_name,
+        scope_code
+    )
+VALUES
+    (
+        'NSGI',
+        'ETRS89_TO_LAT_NL_USAGE',
+        'grid_transformation',
+        'NSGI',
+        'ETRS89_TO_LAT_NL',
+        'EPSG',
+        '1630',
+        'EPSG',
+        '1277'
+    );
