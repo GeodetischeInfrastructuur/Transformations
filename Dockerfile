@@ -16,3 +16,5 @@ RUN cat /usr/share/proj/nl_nsgi_sql/nl_nsgi_50_wgs84_null_transformations.sql | 
 
 RUN cp /usr/share/proj/proj.db /usr/share/proj/proj.global.time.dependent.transformations.db
 RUN cat /usr/share/proj/nl_nsgi_sql/nl_nsgi_60_global_time_dependent_transformations.sql | sqlite3 /usr/share/proj/proj.global.time.dependent.transformations.db
+
+ADD grids/nl_nsgi/ /usr/share/proj/
