@@ -164,8 +164,66 @@ INSERT INTO
 VALUES
     (
         'NSGI',
+        'Bonaire2004_Datum',
+        'Geodetic Datum for Bonaire based on ITRF2000',
+        NULL,
+        'EPSG',
+        '7019',
+        'EPSG',
+        '8901',
+        '2023-12-11',
+        NULL,
+        NULL,
+        NULL,
+        0
+    );
+
+INSERT INTO
+    "usage" (
+        auth_name,
+        code,
+        object_table_name,
+        object_auth_name,
+        object_code,
+        extent_auth_name,
+        extent_code,
+        scope_auth_name,
+        scope_code
+    )
+VALUES
+    (
+        'NSGI',
+        'Bonaire2004_Datum_USAGE',
+        'geodetic_datum',
+        'NSGI',
+        'Bonaire2004_Datum',
+        'EPSG',
+        '3805',
+        'EPSG',
+        '1027'
+    );
+
+INSERT INTO
+    "geodetic_datum" (
+        auth_name,
+        code,
+        name,
+        description,
+        ellipsoid_auth_name,
+        ellipsoid_code,
+        prime_meridian_auth_name,
+        prime_meridian_code,
+        publication_date,
+        frame_reference_epoch,
+        ensemble_accuracy,
+        anchor,
+        deprecated
+    )
+VALUES
+    (
+        'NSGI',
         'DPnet_Saba_Datum',
-        'Geodetic Datum for Bonaire',
+        'Geodetic Datum for Saba',
         NULL,
         'EPSG',
         '7022',
@@ -282,7 +340,7 @@ VALUES
     (
         'NSGI',
         'DPnet_St_Eustatius_Datum',
-        'Geodetic Datum for Bonaire',
+        'Geodetic Datum for St Eustatius',
         NULL,
         'EPSG',
         '7022',
@@ -789,8 +847,8 @@ VALUES
         'geocentric',
         'EPSG',
         '6500',
-        'EPSG',
-        '6656',
+        'NSGI',
+        'Bonaire2004_Datum',
         NULL,
         0
     );
@@ -843,8 +901,8 @@ VALUES
         'geographic 3D',
         'EPSG',
         '6423',
-        'EPSG',
-        '6656',
+        'NSGI',
+        'Bonaire2004_Datum',
         NULL,
         0
     );
@@ -897,8 +955,8 @@ VALUES
         'geographic 2D',
         'EPSG',
         '6422',
-        'EPSG',
-        '6656',
+        'NSGI',
+        'Bonaire2004_Datum',
         NULL,
         0
     );
