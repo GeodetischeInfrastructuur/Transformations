@@ -83,9 +83,6 @@ UPDATE nsgi_wgs_84s_to_wgs_84_usage SET object_auth_name='NSGI';
 UPDATE nsgi_wgs_84s_to_wgs_84_usage SET code=object_code || '_USAGE';
 INSERT INTO usage SELECT * FROM nsgi_wgs_84s_to_wgs_84_usage;
 
-
-
-
 -------------------------------------------------------
 --     Duplicate ETRS9 ensemble to ETRS89 realizations with NSGI authority
 -------------------------------------------------------
