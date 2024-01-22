@@ -22,11 +22,11 @@ INSERT INTO
     )
 VALUES
     ( 'NSGI', 'WGS_84_TO_ETRF2000_NULL', 'WGS 84 to ETRF2000 NULL transformation', 'null transformation between ITRF2000 and ETRF2000', 'EPSG', '9603', 'Geocentric translations (geog2D domain)', 'NSGI', 'WGS84_GEOGRAPHIC_2D', 'EPSG', '9067', 2.5, 0.0, 0.0, 0.0, 'EPSG', '9001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 0 ),
-    ( 'NSGI', 'NSGI_WGS_84_TO_WGS_84_NULL', 'NSGI_WGS 84 to WGS_84 NULL transformation', 'null transformation between NSGI_WGS 84 and WGS_84', 'EPSG', '9603', 'Geocentric translations (geog2D domain)', 'NSGI', 'WGS84_GEOGRAPHIC_2D', 'EPSG', '4326', 0.0, 0.0, 0.0, 0.0, 'EPSG', '9001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 0 ),
+    ( 'NSGI', 'WGS_84_TO_WGS_84_NULL', 'WGS 84 to WGS_84 NULL transformation', 'null transformation between NSGI_WGS 84 and WGS_84', 'EPSG', '9603', 'Geocentric translations (geog2D domain)', 'NSGI', 'WGS84_GEOGRAPHIC_2D', 'EPSG', '4326', 0.0, 0.0, 0.0, 0.0, 'EPSG', '9001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 0 ),
     ( 'NSGI', 'ITRF2014_TO_WGS_84_NULL', 'ITRF2014 to WGS 84 NULL transformation', 'null transformation between ITRF2014 and WGS 84 ', 'EPSG', '1053', 'Time-dependent Position Vector tfm (geocentric)', 'EPSG', '9000', 'EPSG', '4326', 0.1, 0.0, 0.0, 0.0, 'EPSG', '1025', 0.0, 0.0, 0.0, 'EPSG', '1031', 0.0, 'EPSG', '1028', 0.0, 0.0, 0.0, 'EPSG', '1027', 0.0, 0.0, 0.0, 'EPSG', '1032', 0.0, 'EPSG', '1030', 2021.0, 'EPSG', '1029', NULL, NULL, NULL, NULL, NULL, '', 0 ),
-    ( 'NSGI', 'NSGI_Bonaire2004_TO_WGS_84_NULL', 'NSGI Bonaire DPnet TO WGS 84 null transformation', '', 'EPSG', '9603', 'Geocentric translations (geog2D domain)', 'NSGI', 'Bonaire2004_GEOGRAPHIC_2D', 'EPSG', '4326', 2.0, 0.0, 0.0, 0.0, 'EPSG', '9001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 0 ),
-    ( 'NSGI', 'NSGI_Saba2020_TO_WGS_84_NULL', 'NSGI Saba DPnet TO WGS 84 null transformation', '', 'EPSG', '9603', 'Geocentric translations (geog2D domain)', 'NSGI', 'Saba2020_GEOGRAPHIC_2D', 'EPSG', '4326', 2.0, 0.0, 0.0, 0.0, 'EPSG', '9001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 0 ),
-    ( 'NSGI', 'NSGI_St_Eustatius2020_TO_WGS_84_NULL', 'NSGI St_Eustatius DPnet TO WGS 84 null transformation', '', 'EPSG', '9603', 'Geocentric translations (geog2D domain)', 'NSGI', 'St_Eustatius2020_GEOGRAPHIC_2D', 'EPSG', '4326', 2.0, 0.0, 0.0, 0.0, 'EPSG', '9001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 0 );
+    ( 'NSGI', 'Bonaire2004_TO_WGS_84_NULL', 'Bonaire DPnet TO WGS 84 null transformation', '', 'EPSG', '9603', 'Geocentric translations (geog2D domain)', 'NSGI', 'Bonaire2004_GEOGRAPHIC_2D', 'EPSG', '4326', 2.0, 0.0, 0.0, 0.0, 'EPSG', '9001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 0 ),
+    ( 'NSGI', 'Saba2020_TO_WGS_84_NULL', 'Saba DPnet TO WGS 84 null transformation', '', 'EPSG', '9603', 'Geocentric translations (geog2D domain)', 'NSGI', 'Saba2020_GEOGRAPHIC_2D', 'EPSG', '4326', 2.0, 0.0, 0.0, 0.0, 'EPSG', '9001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 0 ),
+    ( 'NSGI', 'StEustatius2020_TO_WGS_84_NULL', 'StEustatius DPnet TO WGS 84 null transformation', '', 'EPSG', '9603', 'Geocentric translations (geog2D domain)', 'NSGI', 'StEustatius2020_GEOGRAPHIC_2D', 'EPSG', '4326', 2.0, 0.0, 0.0, 0.0, 'EPSG', '9001', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 0 );
 
 INSERT INTO
     "usage" (
@@ -34,11 +34,11 @@ INSERT INTO
     )
 VALUES
     ( 'NSGI', 'WGS_84_TO_ETRF2000_NULL_USAGE', 'helmert_transformation', 'NSGI', 'WGS_84_TO_ETRF2000_NULL', 'EPSG', '1262', 'EPSG', '1027' ),
-    ( 'NSGI', 'NSGI_WGS_84_TO_WGS_84_NULL_USAGE', 'helmert_transformation', 'NSGI', 'NSGI_WGS_84_TO_WGS_84_NULL', 'EPSG', '1262', 'EPSG', '1027' ),
+    ( 'NSGI', 'WGS_84_TO_WGS_84_NULL_USAGE', 'helmert_transformation', 'NSGI', 'WGS_84_TO_WGS_84_NULL', 'EPSG', '1262', 'EPSG', '1027' ),
     ( 'NSGI', 'ITRF2014_TO_WGS_84_NULL_USAGE', 'helmert_transformation', 'NSGI', 'ITRF2014_TO_WGS_84_NULL', 'EPSG', '1262', 'EPSG', '1027' ),
-    ( 'NSGI', 'NSGI_Bonaire2004_TO_WGS_84_NULL_USAGE', 'helmert_transformation', 'NSGI', 'NSGI_Bonaire2004_TO_WGS_84_NULL', 'EPSG', '1262', 'EPSG', '1027' ),
-    ( 'NSGI', 'NSGI_Saba2020_TO_WGS_84_NULL_USAGE', 'helmert_transformation', 'NSGI', 'NSGI_Saba2020_TO_WGS_84_NULL', 'EPSG', '1262', 'EPSG', '1027' ),
-    ( 'NSGI', 'NSGI_St_Eustatius2020_TO_WGS_84_NULL_USAGE', 'helmert_transformation', 'NSGI', 'NSGI_St_Eustatius2020_TO_WGS_84_NULL', 'EPSG', '1262', 'EPSG', '1027' );
+    ( 'NSGI', 'Bonaire2004_TO_WGS_84_NULL_USAGE', 'helmert_transformation', 'NSGI', 'Bonaire2004_TO_WGS_84_NULL', 'EPSG', '1262', 'EPSG', '1027' ),
+    ( 'NSGI', 'Saba2020_TO_WGS_84_NULL_USAGE', 'helmert_transformation', 'NSGI', 'Saba2020_TO_WGS_84_NULL', 'EPSG', '1262', 'EPSG', '1027' ),
+    ( 'NSGI', 'StEustatius2020_TO_WGS_84_NULL_USAGE', 'helmert_transformation', 'NSGI', 'StEustatius2020_TO_WGS_84_NULL', 'EPSG', '1262', 'EPSG', '1027' );
 
 -------------------------------------------------------
 --     Transformation (concatenated): 
@@ -50,7 +50,7 @@ INSERT INTO
 VALUES
     ( 'NSGI', 'ETRS89_TO_WGS84_NULL', 'ETRS89 to WGS 84 null transformation', '', 'EPSG', '4258', 'NSGI', 'WGS84_GEOGRAPHIC_2D', 2.5, 'NSGI 2019', 0 ),
     ( 'NSGI', 'AGRS2010_TO_WGS84_NULL', 'AGRS2010 to WGS84 via ETRF2000 null transformation', 'Transformation based on RDNAPTRANS2018 documentation', 'NSGI', 'AGRS2010_GEOGRAPHIC_2D', 'NSGI', 'WGS84_GEOGRAPHIC_2D', 0.001, 'NSGI 2019', 0 ),
-    ( 'NSGI', 'RD_BESSEL_TO_WGS84_NULL', 'RD Bessel to WGS 84 via ETRF2000 null transformation', 'Transformation based on RDNAPTRANS2018 documentation', 'EPSG', '4289', 'NSGI', 'WGS84_GEOGRAPHIC_2D', 0.001, 'NSGI 2019', 0 );
+    ( 'NSGI', 'RD_Bessel_TO_WGS84_NULL', 'RD Bessel to WGS 84 via ETRF2000 null transformation', 'Transformation based on RDNAPTRANS2018 documentation', 'EPSG', '4289', 'NSGI', 'WGS84_GEOGRAPHIC_2D', 0.001, 'NSGI 2019', 0 );
 
 INSERT INTO
     "concatenated_operation_step" ( operation_auth_name, operation_code, step_number, step_auth_name, step_code
@@ -60,10 +60,10 @@ VALUES
     ( 'NSGI', 'ETRS89_TO_WGS84_NULL', 2, 'NSGI', 'WGS_84_TO_ETRF2000_NULL' ),
     ( 'NSGI', 'AGRS2010_TO_WGS84_NULL', 1, 'NSGI', 'AGRS2010_TO_ETRF2000' ),
     ( 'NSGI', 'AGRS2010_TO_WGS84_NULL', 2, 'NSGI', 'WGS_84_TO_ETRF2000_NULL'),
-    ( 'NSGI', 'RD_BESSEL_TO_WGS84_NULL', 1, 'NSGI', 'RD_BESSEL_TO_PSEUDO_RD_BESSEL'), 
-    ( 'NSGI', 'RD_BESSEL_TO_WGS84_NULL', 2, 'NSGI', 'AGRS2010_TO_PSEUDO_RD_BESSEL_VARIANT_1'), 
-    ( 'NSGI', 'RD_BESSEL_TO_WGS84_NULL', 3, 'NSGI', 'AGRS2010_TO_ETRF2000'), 
-    ( 'NSGI', 'RD_BESSEL_TO_WGS84_NULL', 4, 'NSGI', 'WGS_84_TO_ETRF2000_NULL' );
+    ( 'NSGI', 'RD_Bessel_TO_WGS84_NULL', 1, 'NSGI', 'RD_Bessel_TO_Pseudo_RD_Bessel'), 
+    ( 'NSGI', 'RD_Bessel_TO_WGS84_NULL', 2, 'NSGI', 'AGRS2010_TO_Pseudo_RD_Bessel_VARIANT_1'), 
+    ( 'NSGI', 'RD_Bessel_TO_WGS84_NULL', 3, 'NSGI', 'AGRS2010_TO_ETRF2000'), 
+    ( 'NSGI', 'RD_Bessel_TO_WGS84_NULL', 4, 'NSGI', 'WGS_84_TO_ETRF2000_NULL' );
 
 INSERT INTO
     "usage" ( auth_name, code, object_table_name, object_auth_name, object_code, extent_auth_name, extent_code, scope_auth_name, scope_code
@@ -71,5 +71,5 @@ INSERT INTO
 VALUES
     ( 'NSGI', 'ETRS89_TO_WGS84_NULL_USAGE', 'concatenated_operation', 'NSGI', 'ETRS89_TO_WGS84_NULL', 'EPSG', '1262', 'EPSG', '1181' ),
     ( 'NSGI', 'AGRS2010_TO_WGS84_NULL_USAGE', 'concatenated_operation', 'NSGI', 'AGRS2010_TO_WGS84_NULL', 'EPSG', '1262', 'EPSG', '1181' ),
-    ( 'NSGI', 'RD_BESSEL_TO_WGS84_NULL_USAGE', 'concatenated_operation', 'NSGI', 'RD_BESSEL_TO_WGS84_NULL', 'EPSG', '1262', 'EPSG', '1181' );
+    ( 'NSGI', 'RD_Bessel_TO_WGS84_NULL_USAGE', 'concatenated_operation', 'NSGI', 'RD_Bessel_TO_WGS84_NULL', 'EPSG', '1262', 'EPSG', '1181' );
     

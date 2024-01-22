@@ -107,7 +107,7 @@ INSERT INTO
     )
 VALUES
     ( 'NSGI', 'AGRS2010_TO_NAP', 'AGRS2010 to NAP height', 'Transformation based on RDNAPTRANS2018 documentation', 'EPSG', '9665', 'Geographic3D to GravityRelatedHeight (gtx)', 'NSGI', 'AGRS2010_GEOGRAPHIC_3D', 'EPSG', '5709', 0.001, 'EPSG', '8666', 'Geoid (height correction) model file', 'nlgeo2018.gtx', NULL, NULL, NULL, NULL, NULL, NULL, 'NSGI-Nld 2018', 0 ),
-    ( 'NSGI', 'RD_BESSEL_TO_PSEUDO_RD_BESSEL', 'RD Bessel to pseudo RD Bessel grid shift', 'Transformation based on RDNAPTRANS2018 documentation', 'EPSG', '9615', 'NTv2', 'EPSG', '4289', 'NSGI', 'PSEUDO_RD_BESSEL', 0.001, 'EPSG', '8656', 'Latitude and longitude difference file', 'nl_nsgi_rdcorr2018.tif,null', NULL, NULL, NULL, NULL, NULL, NULL, 'NSGI-Nld 2018', 0 ),
+    ( 'NSGI', 'RD_Bessel_TO_Pseudo_RD_Bessel', 'RD Bessel to pseudo RD Bessel grid shift', 'Transformation based on RDNAPTRANS2018 documentation', 'EPSG', '9615', 'NTv2', 'EPSG', '4289', 'NSGI', 'Pseudo_RD_Bessel', 0.001, 'EPSG', '8656', 'Latitude and longitude difference file', 'nl_nsgi_rdcorr2018.tif,null', NULL, NULL, NULL, NULL, NULL, NULL, 'NSGI-Nld 2018', 0 ),
     ( 'NSGI', 'Bonaire_DPnet_to_KADpeil', 'Bonaire DPnet to KADpeil height', 'Transformation based on BESTRANS documentation', 'EPSG', '9665', 'Geographic3D to GravityRelatedHeight (gtx)', 'NSGI', 'DPnet_Bonaire_GEOGRAPHIC_3D', 'NSGI', 'KADpeil_Bonaire', 0.2, 'EPSG', '8666', 'Geoid (height correction) model file', 'bq_nsgi_bongeo2004.gtx', NULL, NULL, NULL, NULL, NULL, NULL, 'NSGI-Nld 2023', 0 ),
     ( 'NSGI', 'ETRS89_TO_ETRS89_LAT_NL', 'ETRS89 to ETRS89 and LAT NL depth', '', 'EPSG', '1122', 'Geog3D to Geog2D+Depth (gtx)', 'EPSG', '4937', 'EPSG', '9289', 0.1, 'EPSG', '8666', 'Geoid (height correction) model file', 'nllat2018.gtx', NULL, NULL, NULL, NULL, 'EPSG', '4258', 'NSGI-Nld 2018', 0 ),
     ( 'NSGI', 'ETRS89_TO_LAT_NL', 'ETRS89 to LAT NL depth', '', 'EPSG', '1121', 'Geographic3D to Depth (gtx)', 'EPSG', '4937', 'EPSG', '9287', 0.1, 'EPSG', '8666', 'Geoid (height correction) model file', 'nllat2018.gtx', NULL, NULL, NULL, NULL, NULL, NULL, 'NSGI-Nld 2018', 0 );
@@ -118,7 +118,7 @@ INSERT INTO
     )
 VALUES
     ( 'NSGI', 'AGRS2010_TO_NAP_USAGE', 'grid_transformation', 'NSGI', 'AGRS2010_TO_NAP', 'NSGI', 'EXTENT_3D_RDNAPTRANS2018', 'EPSG', '1133' ),
-    ( 'NSGI', 'RD_BESSEL_TO_PSEUDO_RD_BESSEL_USAGE', 'grid_transformation', 'NSGI', 'RD_BESSEL_TO_PSEUDO_RD_BESSEL', 'EPSG', '1262', 'EPSG', '1051' ),
+    ( 'NSGI', 'RD_Bessel_TO_Pseudo_RD_Bessel_USAGE', 'grid_transformation', 'NSGI', 'RD_Bessel_TO_Pseudo_RD_Bessel', 'EPSG', '1262', 'EPSG', '1051' ),
     ( 'NSGI', 'Bonaire_DPnet_to_KADpeil_USAGE', 'grid_transformation', 'NSGI', 'Bonaire_DPnet_to_KADpeil', 'EPSG', '3805', 'EPSG', '1027' ),
     ( 'NSGI', 'ETRS89_TO_ETRS89_LAT_NL_USAGE', 'grid_transformation', 'NSGI', 'ETRS89_TO_ETRS89_LAT_NL', 'EPSG', '1630', 'EPSG', '1277' ),
     ( 'NSGI', 'ETRS89_TO_LAT_NL_USAGE', 'grid_transformation', 'NSGI', 'ETRS89_TO_LAT_NL', 'EPSG', '1630', 'EPSG', '1277' );
@@ -130,14 +130,14 @@ INSERT INTO
     "other_transformation" ( auth_name, code, name, description, method_auth_name, method_code, method_name, source_crs_auth_name, source_crs_code, target_crs_auth_name, target_crs_code, accuracy, deprecated
     )
 VALUES
-    ( 'NSGI', 'AGRS2010_TO_PSEUDO_RD_BESSEL_VARIANT_1', 'AGRS2010 to pseudo RD Bessel variant 1', 'Transformation based on RDNAPTRANS2018 documentation', 'PROJ', 'PROJString', '+proj=pipeline +step +proj=axisswap +order=2,1 +step +proj=unitconvert +xy_in=deg +xy_out=rad +step +proj=push +v_3 +step +proj=set +v_3=43 +omit_inv +step +proj=cart +ellps=GRS80 +step +proj=helmert +x=-565.7346 +y=-50.4058 +z=-465.2895 +rx=-0.395023 +ry=0.330776 +rz=-1.876073 +s=-4.07242 +convention=coordinate_frame +exact +step +proj=cart +inv +ellps=bessel +step +proj=set +v_3=0 +omit_fwd +step +proj=pop +v_3 +step +proj=unitconvert +xy_in=rad +xy_out=deg +step +proj=axisswap +order=2,1', 'NSGI', 'AGRS2010_GEOGRAPHIC_2D', 'NSGI', 'PSEUDO_RD_BESSEL', 0.001, 0 );
+    ( 'NSGI', 'AGRS2010_TO_Pseudo_RD_Bessel_VARIANT_1', 'AGRS2010 to pseudo RD Bessel variant 1', 'Transformation based on RDNAPTRANS2018 documentation', 'PROJ', 'PROJString', '+proj=pipeline +step +proj=axisswap +order=2,1 +step +proj=unitconvert +xy_in=deg +xy_out=rad +step +proj=push +v_3 +step +proj=set +v_3=43 +omit_inv +step +proj=cart +ellps=GRS80 +step +proj=helmert +x=-565.7346 +y=-50.4058 +z=-465.2895 +rx=-0.395023 +ry=0.330776 +rz=-1.876073 +s=-4.07242 +convention=coordinate_frame +exact +step +proj=cart +inv +ellps=bessel +step +proj=set +v_3=0 +omit_fwd +step +proj=pop +v_3 +step +proj=unitconvert +xy_in=rad +xy_out=deg +step +proj=axisswap +order=2,1', 'NSGI', 'AGRS2010_GEOGRAPHIC_2D', 'NSGI', 'Pseudo_RD_Bessel', 0.001, 0 );
 
 INSERT INTO
     "usage" (
         auth_name, code, object_table_name, object_auth_name, object_code, extent_auth_name, extent_code, scope_auth_name, scope_code
     )
 VALUES
-    ( 'NSGI', 'AGRS2010_TO_PSEUDO_RD_BESSEL_VARIANT_1_USAGE', 'other_transformation', 'NSGI', 'AGRS2010_TO_PSEUDO_RD_BESSEL_VARIANT_1', 'NSGI', 'EXTENT_3D_RDNAPTRANS2018', 'EPSG', '1181' );
+    ( 'NSGI', 'AGRS2010_TO_Pseudo_RD_Bessel_VARIANT_1_USAGE', 'other_transformation', 'NSGI', 'AGRS2010_TO_Pseudo_RD_Bessel_VARIANT_1', 'NSGI', 'EXTENT_3D_RDNAPTRANS2018', 'EPSG', '1181' );
     
     
     
