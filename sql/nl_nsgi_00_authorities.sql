@@ -1,7 +1,8 @@
 -------------------------------------------------------
 --     Append NSGI to authority references
 -------------------------------------------------------
-UPDATE authority_to_authority_preference
+UPDATE
+    authority_to_authority_preference
 SET
     allowed_authorities = 'NSGI,' || allowed_authorities
 WHERE
@@ -23,7 +24,7 @@ VALUES
 UPDATE
     authority_to_authority_preference
 SET
-    allowed_authorities = REPLACE(allowed_authorities,',ESRI','')
+    allowed_authorities = REPLACE(allowed_authorities, ',ESRI', '')
 WHERE
     source_auth_name = 'EPSG'
     AND target_auth_name = 'EPSG';
