@@ -60,12 +60,6 @@ jobs:
         run: |
           gh release upload ${{ github.event.release.tag_name }} proj.global.time.dependent.transformations.db
 
-      - name: 'Upload proj.db'
-        env:
-          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        run: |
-          gh release upload ${{ github.event.release.tag_name }} proj.db
-
       - name: 'Export grids from Docker image'
         run: |
           cont_id=$(docker create ghcr.io/${{ steps.lowercaserepo.outputs.REPO_LC }}:${{ github.event.release.tag_name }})
