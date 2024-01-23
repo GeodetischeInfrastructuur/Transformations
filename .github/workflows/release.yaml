@@ -59,3 +59,23 @@ jobs:
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           gh release upload ${{ github.event.release.tag_name }} proj.global.time.dependent.transformations.db
+
+      - name: 'Upload proj.db'
+        env:
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: |
+          gh release upload ${{ github.event.release.tag_name }} proj.db
+
+      - name: 'Export grids from Docker image'
+        run: |
+          cont_id=$(docker create ghcr.io/${{ steps.lowercaserepo.outputs.REPO_LC }}:${{ github.event.release.tag_name }})
+          docker cp "${cont_id}:/usr/share/proj/bq_nsgi_bongeo2004.tif" bq_nsgi_bongeo2004.tif
+          docker cp "${cont_id}:/usr/share/proj/nllat2018.gtx" nllat2018.gtx
+          docker rm "$cont_id"
+
+      - name: 'Upload grids'
+        env:
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: |
+          gh release upload ${{ github.event.release.tag_name }} bq_nsgi_bongeo2004.tif
+          gh release upload ${{ github.event.release.tag_name }} nllat2018.gtx
