@@ -55,7 +55,7 @@ layer on top of PROJ; for instance use it with
 ### Build
 
 ```bash
-docker build -t ghcr.io/geodetischeinfrastructuur/transformations:1.0.2 .
+docker build -t ghcr.io/geodetischeinfrastructuur/transformations:1.0.3 .
 ```
 
 ### Run
@@ -69,7 +69,7 @@ docker run -it --rm --name nsgi-proj ghcr.io/geodetischeinfrastructuur/transform
 To invoke `projinfo` from your current terminal sessions run:
 
 ```bash
-docker run --rm --name nsgi-proj ghcr.io/geodetischeinfrastructuur/transformations:1.0.2 projinfo
+docker run --rm --name nsgi-proj ghcr.io/geodetischeinfrastructuur/transformations:1.0.3 projinfo
 ```
 
 ## Test
