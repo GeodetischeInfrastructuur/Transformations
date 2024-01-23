@@ -71,21 +71,27 @@ ADD
 
 CREATE TABLE nsgi_nl_deprecated_by AS
 SELECT
-    *
+    auth_name,
+    code,
+    transformation_table
 FROM
     nsgi_nl_helmert_transformation_table_deprecated;
 
 INSERT INTO
     nsgi_nl_deprecated_by
 SELECT
-    *
+    auth_name,
+    code,
+    transformation_table
 FROM
     nsgi_nl_grid_transformation_deprecated;
 
 INSERT INTO
     nsgi_nl_deprecated_by
 SELECT
-    *
+    auth_name,
+    code,
+    transformation_table
 FROM
     nsgi_nl_other_transformation_deprecated;
 

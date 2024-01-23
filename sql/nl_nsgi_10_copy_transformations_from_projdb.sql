@@ -3,7 +3,53 @@
 -------------------------------------------------------
 CREATE temp TABLE nsgi_wgs_84_to_itrs AS
 SELECT
-    *
+    auth_name,
+    code,
+    name,
+    description,
+    method_auth_name,
+    method_code,
+    source_crs_auth_name,
+    source_crs_code,
+    target_crs_auth_name,
+    target_crs_code,
+    accuracy,
+    tx,
+    ty,
+    tz,
+    translation_uom_auth_name,
+    translation_uom_code,
+    rx,
+    ry,
+    rz,
+    rotation_uom_auth_name,
+    rotation_uom_code,
+    scale_difference,
+    scale_difference_uom_auth_name,
+    scale_difference_uom_code,
+    rate_tx,
+    rate_ty,
+    rate_tz,
+    rate_translation_uom_auth_name,
+    rate_translation_uom_code,
+    rate_rx,
+    rate_ry,
+    rate_rz,
+    rate_rotation_uom_auth_name,
+    rate_rotation_uom_code,
+    rate_scale_difference,
+    rate_scale_difference_uom_auth_name,
+    rate_scale_difference_uom_code,
+    epoch,
+    epoch_uom_auth_name,
+    epoch_uom_code,
+    px,
+    py,
+    pz,
+    pivot_uom_auth_name,
+    pivot_uom_code,
+    operation_version,
+    deprecated
 FROM
     helmert_transformation_table
 WHERE
@@ -17,15 +63,69 @@ SET
 INSERT INTO
     helmert_transformation_table
 SELECT
-    *
+    auth_name,
+    code,
+    name,
+    description,
+    method_auth_name,
+    method_code,
+    source_crs_auth_name,
+    source_crs_code,
+    target_crs_auth_name,
+    target_crs_code,
+    accuracy,
+    tx,
+    ty,
+    tz,
+    translation_uom_auth_name,
+    translation_uom_code,
+    rx,
+    ry,
+    rz,
+    rotation_uom_auth_name,
+    rotation_uom_code,
+    scale_difference,
+    scale_difference_uom_auth_name,
+    scale_difference_uom_code,
+    rate_tx,
+    rate_ty,
+    rate_tz,
+    rate_translation_uom_auth_name,
+    rate_translation_uom_code,
+    rate_rx,
+    rate_ry,
+    rate_rz,
+    rate_rotation_uom_auth_name,
+    rate_rotation_uom_code,
+    rate_scale_difference,
+    rate_scale_difference_uom_auth_name,
+    rate_scale_difference_uom_code,
+    epoch,
+    epoch_uom_auth_name,
+    epoch_uom_code,
+    px,
+    py,
+    pz,
+    pivot_uom_auth_name,
+    pivot_uom_code,
+    operation_version,
+    deprecated
 FROM
     nsgi_wgs_84_to_itrs;
 
 CREATE temp TABLE nsgi_wgs_84_to_itrs_usage AS
 SELECT
-    *
+    auth_name,
+    code,
+    object_table_name,
+    object_auth_name,
+    object_code,
+    extent_auth_name,
+    extent_code,
+    scope_auth_name,
+    scope_code
 FROM
-    USAGE
+    'usage'
 WHERE
     object_auth_name IN (
         SELECT
@@ -62,9 +162,17 @@ SET
     code = object_code || '_USAGE';
 
 INSERT INTO
-    USAGE
+    'usage'
 SELECT
-    *
+    auth_name,
+    code,
+    object_table_name,
+    object_auth_name,
+    object_code,
+    extent_auth_name,
+    extent_code,
+    scope_auth_name,
+    scope_code
 FROM
     nsgi_wgs_84_to_itrs_usage;
 
@@ -73,7 +181,53 @@ FROM
 -------------------------------------------------------
 CREATE temp TABLE nsgi_itrs_to_itrs AS
 SELECT
-    *
+    auth_name,
+    code,
+    name,
+    description,
+    method_auth_name,
+    method_code,
+    source_crs_auth_name,
+    source_crs_code,
+    target_crs_auth_name,
+    target_crs_code,
+    accuracy,
+    tx,
+    ty,
+    tz,
+    translation_uom_auth_name,
+    translation_uom_code,
+    rx,
+    ry,
+    rz,
+    rotation_uom_auth_name,
+    rotation_uom_code,
+    scale_difference,
+    scale_difference_uom_auth_name,
+    scale_difference_uom_code,
+    rate_tx,
+    rate_ty,
+    rate_tz,
+    rate_translation_uom_auth_name,
+    rate_translation_uom_code,
+    rate_rx,
+    rate_ry,
+    rate_rz,
+    rate_rotation_uom_auth_name,
+    rate_rotation_uom_code,
+    rate_scale_difference,
+    rate_scale_difference_uom_auth_name,
+    rate_scale_difference_uom_code,
+    epoch,
+    epoch_uom_auth_name,
+    epoch_uom_code,
+    px,
+    py,
+    pz,
+    pivot_uom_auth_name,
+    pivot_uom_code,
+    operation_version,
+    deprecated
 FROM
     helmert_transformation_table
 WHERE
@@ -88,15 +242,69 @@ SET
 INSERT INTO
     helmert_transformation_table
 SELECT
-    *
+    auth_name,
+    code,
+    name,
+    description,
+    method_auth_name,
+    method_code,
+    source_crs_auth_name,
+    source_crs_code,
+    target_crs_auth_name,
+    target_crs_code,
+    accuracy,
+    tx,
+    ty,
+    tz,
+    translation_uom_auth_name,
+    translation_uom_code,
+    rx,
+    ry,
+    rz,
+    rotation_uom_auth_name,
+    rotation_uom_code,
+    scale_difference,
+    scale_difference_uom_auth_name,
+    scale_difference_uom_code,
+    rate_tx,
+    rate_ty,
+    rate_tz,
+    rate_translation_uom_auth_name,
+    rate_translation_uom_code,
+    rate_rx,
+    rate_ry,
+    rate_rz,
+    rate_rotation_uom_auth_name,
+    rate_rotation_uom_code,
+    rate_scale_difference,
+    rate_scale_difference_uom_auth_name,
+    rate_scale_difference_uom_code,
+    epoch,
+    epoch_uom_auth_name,
+    epoch_uom_code,
+    px,
+    py,
+    pz,
+    pivot_uom_auth_name,
+    pivot_uom_code,
+    operation_version,
+    deprecated
 FROM
     nsgi_itrs_to_itrs;
 
 CREATE temp TABLE nsgi_itrs_to_itrs_usage AS
 SELECT
-    *
+    auth_name,
+    code,
+    object_table_name,
+    object_auth_name,
+    object_code,
+    extent_auth_name,
+    extent_code,
+    scope_auth_name,
+    scope_code
 FROM
-    USAGE
+    'usage'
 WHERE
     object_auth_name IN (
         SELECT
@@ -136,9 +344,17 @@ SET
     code = object_code || '_USAGE';
 
 INSERT INTO
-    USAGE
+    'usage'
 SELECT
-    *
+    auth_name,
+    code,
+    object_table_name,
+    object_auth_name,
+    object_code,
+    extent_auth_name,
+    extent_code,
+    scope_auth_name,
+    scope_code
 FROM
     nsgi_itrs_to_itrs_usage;
 
@@ -147,7 +363,53 @@ FROM
 -------------------------------------------------------
 CREATE temp TABLE nsgi_wgs_84s_to_wgs_84 AS
 SELECT
-    *
+    auth_name,
+    code,
+    name,
+    description,
+    method_auth_name,
+    method_code,
+    source_crs_auth_name,
+    source_crs_code,
+    target_crs_auth_name,
+    target_crs_code,
+    accuracy,
+    tx,
+    ty,
+    tz,
+    translation_uom_auth_name,
+    translation_uom_code,
+    rx,
+    ry,
+    rz,
+    rotation_uom_auth_name,
+    rotation_uom_code,
+    scale_difference,
+    scale_difference_uom_auth_name,
+    scale_difference_uom_code,
+    rate_tx,
+    rate_ty,
+    rate_tz,
+    rate_translation_uom_auth_name,
+    rate_translation_uom_code,
+    rate_rx,
+    rate_ry,
+    rate_rz,
+    rate_rotation_uom_auth_name,
+    rate_rotation_uom_code,
+    rate_scale_difference,
+    rate_scale_difference_uom_auth_name,
+    rate_scale_difference_uom_code,
+    epoch,
+    epoch_uom_auth_name,
+    epoch_uom_code,
+    px,
+    py,
+    pz,
+    pivot_uom_auth_name,
+    pivot_uom_code,
+    operation_version,
+    deprecated
 FROM
     helmert_transformation_table
 WHERE
@@ -162,15 +424,69 @@ SET
 INSERT INTO
     helmert_transformation_table
 SELECT
-    *
+    auth_name,
+    code,
+    name,
+    description,
+    method_auth_name,
+    method_code,
+    source_crs_auth_name,
+    source_crs_code,
+    target_crs_auth_name,
+    target_crs_code,
+    accuracy,
+    tx,
+    ty,
+    tz,
+    translation_uom_auth_name,
+    translation_uom_code,
+    rx,
+    ry,
+    rz,
+    rotation_uom_auth_name,
+    rotation_uom_code,
+    scale_difference,
+    scale_difference_uom_auth_name,
+    scale_difference_uom_code,
+    rate_tx,
+    rate_ty,
+    rate_tz,
+    rate_translation_uom_auth_name,
+    rate_translation_uom_code,
+    rate_rx,
+    rate_ry,
+    rate_rz,
+    rate_rotation_uom_auth_name,
+    rate_rotation_uom_code,
+    rate_scale_difference,
+    rate_scale_difference_uom_auth_name,
+    rate_scale_difference_uom_code,
+    epoch,
+    epoch_uom_auth_name,
+    epoch_uom_code,
+    px,
+    py,
+    pz,
+    pivot_uom_auth_name,
+    pivot_uom_code,
+    operation_version,
+    deprecated
 FROM
     nsgi_wgs_84s_to_wgs_84;
 
 CREATE temp TABLE nsgi_wgs_84s_to_wgs_84_usage AS
 SELECT
-    *
+    auth_name,
+    code,
+    object_table_name,
+    object_auth_name,
+    object_code,
+    extent_auth_name,
+    extent_code,
+    scope_auth_name,
+    scope_code
 FROM
-    USAGE
+    'usage'
 WHERE
     object_auth_name IN (
         SELECT
@@ -210,9 +526,17 @@ SET
     code = object_code || '_USAGE';
 
 INSERT INTO
-    USAGE
+    'usage'
 SELECT
-    *
+    auth_name,
+    code,
+    object_table_name,
+    object_auth_name,
+    object_code,
+    extent_auth_name,
+    extent_code,
+    scope_auth_name,
+    scope_code
 FROM
     nsgi_wgs_84s_to_wgs_84_usage;
 
@@ -221,7 +545,53 @@ FROM
 -------------------------------------------------------
 CREATE temp TABLE nsgi_etrs89_to_etrf AS
 SELECT
-    *
+    auth_name,
+    code,
+    name,
+    description,
+    method_auth_name,
+    method_code,
+    source_crs_auth_name,
+    source_crs_code,
+    target_crs_auth_name,
+    target_crs_code,
+    accuracy,
+    tx,
+    ty,
+    tz,
+    translation_uom_auth_name,
+    translation_uom_code,
+    rx,
+    ry,
+    rz,
+    rotation_uom_auth_name,
+    rotation_uom_code,
+    scale_difference,
+    scale_difference_uom_auth_name,
+    scale_difference_uom_code,
+    rate_tx,
+    rate_ty,
+    rate_tz,
+    rate_translation_uom_auth_name,
+    rate_translation_uom_code,
+    rate_rx,
+    rate_ry,
+    rate_rz,
+    rate_rotation_uom_auth_name,
+    rate_rotation_uom_code,
+    rate_scale_difference,
+    rate_scale_difference_uom_auth_name,
+    rate_scale_difference_uom_code,
+    epoch,
+    epoch_uom_auth_name,
+    epoch_uom_code,
+    px,
+    py,
+    pz,
+    pivot_uom_auth_name,
+    pivot_uom_code,
+    operation_version,
+    deprecated
 FROM
     helmert_transformation_table
 WHERE
@@ -236,15 +606,69 @@ SET
 INSERT INTO
     helmert_transformation_table
 SELECT
-    *
+    auth_name,
+    code,
+    name,
+    description,
+    method_auth_name,
+    method_code,
+    source_crs_auth_name,
+    source_crs_code,
+    target_crs_auth_name,
+    target_crs_code,
+    accuracy,
+    tx,
+    ty,
+    tz,
+    translation_uom_auth_name,
+    translation_uom_code,
+    rx,
+    ry,
+    rz,
+    rotation_uom_auth_name,
+    rotation_uom_code,
+    scale_difference,
+    scale_difference_uom_auth_name,
+    scale_difference_uom_code,
+    rate_tx,
+    rate_ty,
+    rate_tz,
+    rate_translation_uom_auth_name,
+    rate_translation_uom_code,
+    rate_rx,
+    rate_ry,
+    rate_rz,
+    rate_rotation_uom_auth_name,
+    rate_rotation_uom_code,
+    rate_scale_difference,
+    rate_scale_difference_uom_auth_name,
+    rate_scale_difference_uom_code,
+    epoch,
+    epoch_uom_auth_name,
+    epoch_uom_code,
+    px,
+    py,
+    pz,
+    pivot_uom_auth_name,
+    pivot_uom_code,
+    operation_version,
+    deprecated
 FROM
     nsgi_etrs89_to_etrf;
 
 CREATE temp TABLE nsgi_etrs89_to_etrf_usage AS
 SELECT
-    *
+    auth_name,
+    code,
+    object_table_name,
+    object_auth_name,
+    object_code,
+    extent_auth_name,
+    extent_code,
+    scope_auth_name,
+    scope_code
 FROM
-    USAGE
+    'usage'
 WHERE
     object_auth_name IN (
         SELECT
@@ -283,9 +707,17 @@ SET
     code = object_code || '_USAGE';
 
 INSERT INTO
-    USAGE
+    'usage'
 SELECT
-    *
+    auth_name,
+    code,
+    object_table_name,
+    object_auth_name,
+    object_code,
+    extent_auth_name,
+    extent_code,
+    scope_auth_name,
+    scope_code
 FROM
     nsgi_etrs89_to_etrf_usage;
 
