@@ -63,7 +63,7 @@ docker build -t ghcr.io/geodetischeinfrastructuur/transformations:1.0.3 .
 To start an interactive terminal inside the container run:
 
 ```bash
-docker run -it --rm --name nsgi-proj ghcr.io/geodetischeinfrastructuur/transformations:1.
+docker run -it --rm --name nsgi-proj ghcr.io/geodetischeinfrastructuur/transformations:1.0.3
 ```
 
 To invoke `projinfo` from your current terminal sessions run:
