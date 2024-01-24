@@ -477,15 +477,4 @@ VALUES
         '3805',
         'EPSG',
         '1027'
-    ),
-    (
-        'NSGI',
-        'DPnet_StEustatius_TO_ITRF2014_USAGE',
-        'other_transformation',
-        'NSGI',
-        'DPnet_StEustatius_TO_ITRF2014',
-        'EPSG',
-        '1262',
-        'EPSG',
-        '1027'
     );
