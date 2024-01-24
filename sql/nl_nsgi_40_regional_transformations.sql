@@ -362,7 +362,7 @@ INSERT INTO
 VALUES
     (
         'NSGI',
-        'Bonaire_DPnet_TO_Bonaire2004_2D',
+        'Bonaire_DPnet_TO_Bonaire2004',
         'DPnet Bonaire to Bonaire2004 2D transformation',
         'transformation between DPnet Bonaire and Bonaire2004',
         'PROJ',
@@ -377,9 +377,9 @@ VALUES
     ),
     (
         'NSGI',
-        'Bonaire_DPnet_KADpeil_TO_Bonaire2004_3D',
-        'DPnet Bonaire to Bonaire2004 3D transformation',
-        'transformation between DPnet and KADpeil Bonaire and Bonaire2004',
+        'Bonaire_DPnet_KADpeil_TO_Bonaire2004',
+        'Bonaire DPnet KADpeil to Bonaire2004 3D transformation',
+        'Transformation between Bonaire DPnet KADpeil and Bonaire2004',
         'PROJ',
         'PROJString',
         '+proj=pipeline +step +proj=push +v_3 +step +proj=tmerc +inv +lat_0=12.180658675 +lon_0=-68.251802281 +k_0=1 +x_0=23209.5600 +y_0=21423.9900 +ellps=intl +step +proj=cart +ellps=intl +step +proj=helmert +x=-366.1939 +y=-115.0688 +z=-776.7039 +rx=20.963080 +ry=16.462749 +rz=-14.276379 +s=-12.80900 +convention=coordinate_frame +exact +step +proj=cart +inv +ellps=GRS80 +step +proj=vgridshift +grids=bq_nsgi_bongeo2004.tif +omit_fwd +step +proj=pop +v_3 +step +proj=vgridshift +inv +grids=bq_nsgi_bongeo2004.tif +step +proj=axisswap +order=2,1 +step +proj=unitconvert +xy_in=rad +xy_out=deg',
@@ -394,7 +394,7 @@ VALUES
         'NSGI',
         'Saba_DPnet_TO_Saba2020',
         'DPnet Saba to Saba2020 transformation',
-        'transformation between DPnet Saba and Saba2020',
+        'Transformation between Saba DPnet and Saba2020',
         'PROJ',
         'PROJString',
         '+proj=pipeline +step +proj=axisswap +order=2,1 +step +proj=unitconvert +xy_in=deg +xy_out=rad +step +proj=cart +ellps=intl +step +proj=helmert +x=1138.7432 +y=-2064.4761 +z=110.7016 +rx=-214.615206 +ry=479.360036 +rz=-164.703951 +s=-402.32073 +convention=coordinate_frame +exact +step +proj=cart +inv +ellps=GRS80 +step +proj=axisswap +order=2,1 +step +proj=unitconvert +xy_in=rad +xy_out=deg',
@@ -407,16 +407,16 @@ VALUES
     ),
     (
         'NSGI',
-        'St_Eustatius_DPnet_TO_StEustatius2020',
-        'DPnet StEustatius to StEustatius2020 transformation',
-        'transformation between DPnet StEustatius and StEustatius2020',
+        'St_Eustatius_DPnet_TO_St_Eustatius2020',
+        'DPnet St_Eustatius to St_Eustatius2020 transformation',
+        'transformation between DPnet St_Eustatius and St_Eustatius2020',
         'PROJ',
         'PROJString',
         '+proj=pipeline +step +proj=axisswap +order=2,1 +step +proj=unitconvert +xy_in=deg +xy_out=rad +step +proj=cart +ellps=intl +step +proj=helmert +x=1276.2485 +y=-2016.6406 +z=667.4403 +rx=-101.005288 +ry=212.913401 +rz=-68.432770 +s=-431.59604 +convention=coordinate_frame +exact +step +proj=cart +inv +ellps=GRS80 +step +proj=axisswap +order=2,1 +step +proj=unitconvert +xy_in=rad +xy_out=deg',
         'NSGI',
         'St_Eustatius_DPnet_GEOGRAPHIC_3D',
         'NSGI',
-        'StEustatius2020_GEOGRAPHIC_3D',
+        'St_Eustatius2020_GEOGRAPHIC_3D',
         0.1000,
         0
     );
@@ -436,10 +436,10 @@ INSERT INTO
 VALUES
     (
         'NSGI',
-        'Bonaire_DPnet_TO_Bonaire2004_2D_USAGE',
+        'Bonaire_DPnet_TO_Bonaire2004_USAGE',
         'other_transformation',
         'NSGI',
-        'Bonaire_DPnet_TO_Bonaire2004_2D',
+        'Bonaire_DPnet_TO_Bonaire2004',
         'EPSG',
         '3805',
         'EPSG',
@@ -447,10 +447,10 @@ VALUES
     ),
     (
         'NSGI',
-        'Bonaire_DPnet_KADpeil_TO_Bonaire2004_3D_USAGE',
+        'Bonaire_DPnet_KADpeil_TO_Bonaire2004_USAGE',
         'other_transformation',
         'NSGI',
-        'Bonaire_DPnet_KADpeil_TO_Bonaire2004_3D',
+        'Bonaire_DPnet_KADpeil_TO_Bonaire2004',
         'EPSG',
         '3805',
         'EPSG',
@@ -469,23 +469,12 @@ VALUES
     ),
     (
         'NSGI',
-        'St_Eustatius_DPnet_TO_StEustatius2020_USAGE',
+        'St_Eustatius_DPnet_TO_St_Eustatius2020_USAGE',
         'other_transformation',
         'NSGI',
-        'St_Eustatius_DPnet_TO_StEustatius2020',
+        'St_Eustatius_DPnet_TO_St_Eustatius2020',
         'EPSG',
         '3805',
-        'EPSG',
-        '1027'
-    ),
-    (
-        'NSGI',
-        'St_Eustatius_DPnet_TO_ITRF2014_USAGE',
-        'other_transformation',
-        'NSGI',
-        'St_Eustatius_DPnet_TO_ITRF2014',
-        'EPSG',
-        '1262',
         'EPSG',
         '1027'
     );
