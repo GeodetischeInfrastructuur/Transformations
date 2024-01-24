@@ -63,7 +63,7 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_Bonaire_Datum',
+        'Bonaire_DPnet_Datum',
         'Geodetic Datum for Bonaire',
         NULL,
         'EPSG',
@@ -93,7 +93,7 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_Saba_Datum',
+        'Saba_DPnet_Datum',
         'Geodetic Datum for Saba',
         NULL,
         'EPSG',
@@ -108,7 +108,7 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_StEustatius_Datum',
+        'St_Eustatius_DPnet_Datum',
         'Geodetic Datum for St Eustatius',
         NULL,
         'EPSG',
@@ -163,10 +163,10 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_Bonaire_Datum_USAGE',
+        'Bonaire_DPnet_Datum_USAGE',
         'geodetic_datum',
         'NSGI',
-        'DPnet_Bonaire_Datum',
+        'Bonaire_DPnet_Datum',
         'EPSG',
         '3805',
         'EPSG',
@@ -185,10 +185,10 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_Saba_Datum_USAGE',
+        'Saba_DPnet_Datum_USAGE',
         'geodetic_datum',
         'NSGI',
-        'DPnet_Saba_Datum',
+        'Saba_DPnet_Datum',
         'EPSG',
         '3805',
         'EPSG',
@@ -196,10 +196,10 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_StEustatius_Datum_USAGE',
+        'St_Eustatius_DPnet_Datum_USAGE',
         'geodetic_datum',
         'NSGI',
-        'DPnet_StEustatius_Datum',
+        'St_Eustatius_DPnet_Datum',
         'EPSG',
         '3805',
         'EPSG',
@@ -290,40 +290,40 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_Bonaire_GEOCENTRIC',
+        'Bonaire_Local_2004_GEOCENTRIC',
         'DPnet Bonaire',
         NULL,
         'geocentric',
         'EPSG',
         '6500',
         'NSGI',
-        'DPnet_Bonaire_Datum',
+        'Bonaire_DPnet_Datum',
         NULL,
         0
     ),
     (
         'NSGI',
-        'DPnet_Bonaire_GEOGRAPHIC_3D',
+        'Bonaire_Local_2004_GEOGRAPHIC_3D',
         'DPnet Bonaire',
         NULL,
         'geographic 3D',
         'EPSG',
         '6423',
         'NSGI',
-        'DPnet_Bonaire_Datum',
+        'Bonaire_DPnet_Datum',
         NULL,
         0
     ),
     (
         'NSGI',
-        'DPnet_Bonaire_GEOGRAPHIC_2D',
+        'Bonaire_Local_2004_GEOGRAPHIC_2D',
         'DPnet Bonaire',
         NULL,
         'geographic 2D',
         'EPSG',
         '6422',
         'NSGI',
-        'DPnet_Bonaire_Datum',
+        'Bonaire_DPnet_Datum',
         NULL,
         0
     ),
@@ -368,40 +368,40 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_Saba_GEOCENTRIC',
+        'Saba_Local_2020_GEOCENTRIC',
         'DPnet Saba',
         NULL,
         'geocentric',
         'EPSG',
         '6500',
         'NSGI',
-        'DPnet_Saba_Datum',
+        'Saba_DPnet_Datum',
         NULL,
         0
     ),
     (
         'NSGI',
-        'DPnet_Saba_GEOGRAPHIC_3D',
+        'Saba_Local_2020_GEOGRAPHIC_3D',
         'DPnet Saba',
         NULL,
         'geographic 3D',
         'EPSG',
         '6423',
         'NSGI',
-        'DPnet_Saba_Datum',
+        'Saba_DPnet_Datum',
         NULL,
         0
     ),
     (
         'NSGI',
-        'DPnet_Saba_GEOGRAPHIC_2D',
+        'Saba_Local_2020_GEOGRAPHIC_2D',
         'DPnet Saba',
         NULL,
         'geographic 2D',
         'EPSG',
         '6422',
         'NSGI',
-        'DPnet_Saba_Datum',
+        'Saba_DPnet_Datum',
         NULL,
         0
     ),
@@ -446,47 +446,47 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_StEustatius_GEOCENTRIC',
-        'DPnet StEustatius',
+        'St_Eustatius_Local_2020_GEOCENTRIC',
+        'DPnet St_Eustatius',
         NULL,
         'geocentric',
         'EPSG',
         '6500',
         'NSGI',
-        'DPnet_StEustatius_Datum',
+        'St_Eustatius_DPnet_Datum',
         NULL,
         0
     ),
     (
         'NSGI',
-        'DPnet_StEustatius_GEOGRAPHIC_3D',
-        'DPnet StEustatius',
+        'St_Eustatius_Local_2020_GEOGRAPHIC_3D',
+        'DPnet St_Eustatius',
         NULL,
         'geographic 3D',
         'EPSG',
         '6423',
         'NSGI',
-        'DPnet_StEustatius_Datum',
+        'St_Eustatius_DPnet_Datum',
         NULL,
         0
     ),
     (
         'NSGI',
-        'DPnet_StEustatius_GEOGRAPHIC_2D',
-        'DPnet StEustatius',
+        'St_Eustatius_Local_2020_GEOGRAPHIC_2D',
+        'DPnet St_Eustatius',
         NULL,
         'geographic 2D',
         'EPSG',
         '6422',
         'NSGI',
-        'DPnet_StEustatius_Datum',
+        'St_Eustatius_DPnet_Datum',
         NULL,
         0
     ),
     (
         'NSGI',
-        'StEustatius2020_GEOCENTRIC',
-        'ITRF2014 realisation at epoch 2020.0 of StEustatius',
+        'St_Eustatius2020_GEOCENTRIC',
+        'ITRF2014 realisation at epoch 2020.0 of St_Eustatius',
         NULL,
         'geocentric',
         'EPSG',
@@ -498,8 +498,8 @@ VALUES
     ),
     (
         'NSGI',
-        'StEustatius2020_GEOGRAPHIC_3D',
-        'ITRF2014 realisation at epoch 2020.0 of StEustatius',
+        'St_Eustatius2020_GEOGRAPHIC_3D',
+        'ITRF2014 realisation at epoch 2020.0 of St_Eustatius',
         NULL,
         'geographic 3D',
         'EPSG',
@@ -511,8 +511,8 @@ VALUES
     ),
     (
         'NSGI',
-        'StEustatius2020_GEOGRAPHIC_2D',
-        'ITRF2014 realisation at epoch 2020.0 of StEustatius',
+        'St_Eustatius2020_GEOGRAPHIC_2D',
+        'ITRF2014 realisation at epoch 2020.0 of St_Eustatius',
         NULL,
         'geographic 2D',
         'EPSG',
@@ -582,10 +582,10 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_Bonaire_GEOCENTRIC_USAGE',
+        'Bonaire_Local_2004_GEOCENTRIC_USAGE',
         'geodetic_crs',
         'NSGI',
-        'DPnet_Bonaire_GEOCENTRIC',
+        'Bonaire_Local_2004_GEOCENTRIC',
         'EPSG',
         '3805',
         'EPSG',
@@ -593,10 +593,10 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_Bonaire_GEOGRAPHIC_3D_USAGE',
+        'Bonaire_Local_2004_GEOGRAPHIC_3D_USAGE',
         'geodetic_crs',
         'NSGI',
-        'DPnet_Bonaire_GEOGRAPHIC_3D',
+        'Bonaire_Local_2004_GEOGRAPHIC_3D',
         'EPSG',
         '3805',
         'EPSG',
@@ -604,10 +604,10 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_Bonaire_GEOGRAPHIC_2D_USAGE',
+        'Bonaire_Local_2004_GEOGRAPHIC_2D_USAGE',
         'geodetic_crs',
         'NSGI',
-        'DPnet_Bonaire_GEOGRAPHIC_2D',
+        'Bonaire_Local_2004_GEOGRAPHIC_2D',
         'EPSG',
         '3805',
         'EPSG',
@@ -648,10 +648,10 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_Saba_GEOCENTRIC_USAGE',
+        'Saba_Local_2020_GEOCENTRIC_USAGE',
         'geodetic_crs',
         'NSGI',
-        'DPnet_Saba_GEOCENTRIC',
+        'Saba_Local_2020_GEOCENTRIC',
         'EPSG',
         '3805',
         'EPSG',
@@ -659,10 +659,10 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_Saba_GEOGRAPHIC_3D_USAGE',
+        'Saba_Local_2020_GEOGRAPHIC_3D_USAGE',
         'geodetic_crs',
         'NSGI',
-        'DPnet_Saba_GEOGRAPHIC_3D',
+        'Saba_Local_2020_GEOGRAPHIC_3D',
         'EPSG',
         '3805',
         'EPSG',
@@ -670,10 +670,10 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_Saba_GEOGRAPHIC_2D_USAGE',
+        'Saba_Local_2020_GEOGRAPHIC_2D_USAGE',
         'geodetic_crs',
         'NSGI',
-        'DPnet_Saba_GEOGRAPHIC_2D',
+        'Saba_Local_2020_GEOGRAPHIC_2D',
         'EPSG',
         '3805',
         'EPSG',
@@ -714,10 +714,10 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_StEustatius_GEOCENTRIC_USAGE',
+        'St_Eustatius_Local_2020_GEOCENTRIC_USAGE',
         'geodetic_crs',
         'NSGI',
-        'DPnet_StEustatius_GEOCENTRIC',
+        'St_Eustatius_Local_2020_GEOCENTRIC',
         'EPSG',
         '3805',
         'EPSG',
@@ -725,10 +725,10 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_StEustatius_GEOGRAPHIC_3D_USAGE',
+        'St_Eustatius_Local_2020_GEOGRAPHIC_3D_USAGE',
         'geodetic_crs',
         'NSGI',
-        'DPnet_StEustatius_GEOGRAPHIC_3D',
+        'St_Eustatius_Local_2020_GEOGRAPHIC_3D',
         'EPSG',
         '3805',
         'EPSG',
@@ -736,10 +736,10 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_StEustatius_GEOGRAPHIC_2D_USAGE',
+        'St_Eustatius_Local_2020_GEOGRAPHIC_2D_USAGE',
         'geodetic_crs',
         'NSGI',
-        'DPnet_StEustatius_GEOGRAPHIC_2D',
+        'St_Eustatius_Local_2020_GEOGRAPHIC_2D',
         'EPSG',
         '3805',
         'EPSG',
@@ -747,10 +747,10 @@ VALUES
     ),
     (
         'NSGI',
-        'StEustatius2020_GEOCENTRIC_USAGE',
+        'St_Eustatius2020_GEOCENTRIC_USAGE',
         'geodetic_crs',
         'NSGI',
-        'StEustatius2020_GEOCENTRIC',
+        'St_Eustatius2020_GEOCENTRIC',
         'EPSG',
         '3805',
         'EPSG',
@@ -758,7 +758,7 @@ VALUES
     ),
     (
         'NSGI',
-        'StEustatius2020_GEOGRAPHIC_3D_USAGE',
+        'St_Eustatius2020_GEOGRAPHIC_3D_USAGE',
         'geodetic_crs',
         'NSGI',
         'Bonaire2004_GEOGRAPHIC_3D',
@@ -769,10 +769,10 @@ VALUES
     ),
     (
         'NSGI',
-        'StEustatius2020_GEOGRAPHIC_2D_USAGE',
+        'St_Eustatius2020_GEOGRAPHIC_2D_USAGE',
         'geodetic_crs',
         'NSGI',
-        'StEustatius2020_GEOGRAPHIC_2D',
+        'St_Eustatius2020_GEOGRAPHIC_2D',
         'EPSG',
         '3805',
         'EPSG',
@@ -785,7 +785,7 @@ INSERT INTO
 VALUES
     (
         'NSGI',
-        'DPnet_Bonaire_conversion',
+        'Bonaire_DPnet_conversion',
         'Local map projection system of Bonaire',
         '',
         'EPSG',
@@ -837,7 +837,7 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_Saba_conversion',
+        'Saba_DPnet_conversion',
         'Local map projection of Saba',
         '',
         'EPSG',
@@ -889,8 +889,8 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_StEustatius_conversion',
-        'Local map projection of StEustatius',
+        'St_Eustatius_DPnet_conversion',
+        'Local map projection of St_Eustatius',
         '',
         'EPSG',
         '9807',
@@ -955,10 +955,10 @@ INSERT INTO
 VALUES
     (
         'NSGI',
-        'DPnet_Bonaire_conversion_USAGE',
+        'Bonaire_DPnet_conversion_USAGE',
         'conversion',
         'NSGI',
-        'DPnet_Bonaire_conversion',
+        'Bonaire_DPnet_conversion',
         'EPSG',
         '3805',
         'EPSG',
@@ -966,10 +966,10 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_Saba_conversion_USAGE',
+        'Saba_DPnet_conversion_USAGE',
         'conversion',
         'NSGI',
-        'DPnet_Saba_conversion',
+        'Saba_DPnet_conversion',
         'EPSG',
         '3805',
         'EPSG',
@@ -977,10 +977,10 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_StEustatius_conversion_USAGE',
+        'St_Eustatius_DPnet_conversion_USAGE',
         'conversion',
         'NSGI',
-        'DPnet_StEustatius_conversion',
+        'St_Eustatius_DPnet_conversion',
         'EPSG',
         '3805',
         'EPSG',
@@ -993,43 +993,43 @@ INSERT INTO
 VALUES
     (
         'NSGI',
-        'DPnet_Bonaire',
+        'Bonaire_DPnet',
         'Local coordinate system of Bonaire',
         NULL,
         'EPSG',
         '4499',
         'NSGI',
-        'DPnet_Bonaire_GEOGRAPHIC_2D',
+        'Bonaire_Local_2004_GEOGRAPHIC_2D',
         'NSGI',
-        'DPnet_Bonaire_conversion',
+        'Bonaire_DPnet_conversion',
         NULL,
         0
     ),
     (
         'NSGI',
-        'DPnet_Saba',
+        'Saba_DPnet',
         'Local coordinate system of Saba',
         NULL,
         'EPSG',
         '4499',
         'NSGI',
-        'DPnet_Saba_GEOGRAPHIC_2D',
+        'Saba_Local_2020_GEOGRAPHIC_2D',
         'NSGI',
-        'DPnet_Saba_conversion',
+        'Saba_DPnet_conversion',
         NULL,
         0
     ),
     (
         'NSGI',
-        'DPnet_StEustatius',
-        'Local coordinate system of StEustatius',
+        'St_Eustatius_DPnet',
+        'Local coordinate system of St_Eustatius',
         NULL,
         'EPSG',
         '4499',
         'NSGI',
-        'DPnet_StEustatius_GEOGRAPHIC_2D',
+        'St_Eustatius_Local_2020_GEOGRAPHIC_2D',
         'NSGI',
-        'DPnet_StEustatius_conversion',
+        'St_Eustatius_DPnet_conversion',
         NULL,
         0
     );
@@ -1049,10 +1049,10 @@ INSERT INTO
 VALUES
     (
         'NSGI',
-        'DPnet_Bonaire_USAGE',
+        'Bonaire_DPnet_USAGE',
         'projected_crs',
         'NSGI',
-        'DPnet_Bonaire',
+        'Bonaire_DPnet',
         'EPSG',
         '3805',
         'EPSG',
@@ -1060,10 +1060,10 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_Saba_USAGE',
+        'Saba_DPnet_USAGE',
         'projected_crs',
         'NSGI',
-        'DPnet_Saba',
+        'Saba_DPnet',
         'EPSG',
         '3805',
         'EPSG',
@@ -1071,10 +1071,10 @@ VALUES
     ),
     (
         'NSGI',
-        'DPnet_StEustatius_USAGE',
+        'St_Eustatius_DPnet_USAGE',
         'projected_crs',
         'NSGI',
-        'DPnet_StEustatius',
+        'St_Eustatius_DPnet',
         'EPSG',
         '3805',
         'EPSG',
@@ -1087,7 +1087,7 @@ INSERT INTO
 VALUES
     (
         'NSGI',
-        'KADpeil_Bonaire_Datum',
+        'Bonaire_KADpeil_Datum',
         'KAD Peil Bonaire',
         NULL,
         NULL,
@@ -1095,7 +1095,30 @@ VALUES
         NULL,
         NULL,
         0
+    ),
+    (
+        'NSGI',
+        'St_Eustatius_Height_Datum',
+        'Height datum for Sint Eustatius',
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        0
+    ),
+    (
+        'NSGI',
+        'Saba_Height_Datum',
+        'Height datum for Saba',
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        0
     );
+    
 
 INSERT INTO
     "usage" (
@@ -1112,14 +1135,36 @@ INSERT INTO
 VALUES
     (
         'NSGI',
-        'KADpeil_Bonaire_Datum_USAGE',
+        'Saba_Height_Datum_USAGE',
         'vertical_datum',
         'NSGI',
-        'KADpeil_Bonaire_Datum',
+        'Saba_Height_Datum',
         'EPSG',
         '3805',
         'EPSG',
         '1027'
+    ),
+    (
+    'NSGI',
+    'St_Eustatius_Height_Datum_USAGE',
+    'vertical_datum',
+    'NSGI',
+    'St_Eustatius_Height_Datum',
+    'EPSG',
+    '3805',
+    'EPSG',
+    '1027'
+    ),
+    (
+    'NSGI',
+    'Bonaire_KADpeil_Datum_USAGE',
+    'vertical_datum',
+    'NSGI',
+    'Bonaire_KADpeil_Datum',
+    'EPSG',
+    '3805',
+    'EPSG',
+    '1027'
     );
 
 -- vertical crss
@@ -1128,13 +1173,35 @@ INSERT INTO
 VALUES
     (
         'NSGI',
-        'KADpeil_Bonaire',
-        'KADpeil_Bonaire',
+        'Bonaire_KADpeil',
+        'Bonaire_KADpeil',
         NULL,
         'EPSG',
         '6499',
+        'NSGI',
+        'Bonaire_KADpeil_Datum',
+        0
+    ),
+    (
+        'NSGI',
+        'St_Eustatius_Height',
+        'St_Eustatius_Height',
+        NULL,
         'EPSG',
-        '5109',
+        '6499',
+        'NSGI',
+        'St_Eustatius_Height_Datum',
+        0
+    ),
+    (
+        'NSGI',
+        'Saba_Height',
+        'Saba_Height',
+        NULL,
+        'EPSG',
+        '6499',
+        'NSGI',
+        'Saba_Height_Datum',
         0
     );
 
@@ -1153,15 +1220,37 @@ INSERT INTO
 VALUES
     (
         'NSGI',
-        'KADpeil_Bonaire_USAGE',
+        'Bonaire_KADpeil_USAGE',
         'vertical_crs',
         'NSGI',
-        'KADpeil_Bonaire',
+        'Bonaire_KADpeil',
         'EPSG',
         '3805',
         'EPSG',
         '1027'
-    );
+    ),
+    (
+        'NSGI',
+        'St_Eustatius_Height_USAGE',
+        'vertical_crs',
+        'NSGI',
+        'St_Eustatius_Height',
+        'EPSG',
+        '3805',
+        'EPSG',
+        '1027'
+    ),
+    (
+        'NSGI',
+        'Saba_Height_USAGE',
+        'vertical_crs',
+        'NSGI',
+        'Saba_Height',
+        'EPSG',
+        '3805',
+        'EPSG',
+        '1027'
+    )    ;
 
 --- Compound crs
 INSERT INTO
@@ -1169,13 +1258,35 @@ INSERT INTO
 VALUES
     (
         'NSGI',
-        'DPnet_KADpeil_Bonaire',
+        'Bonaire_DPnet_KADpeil',
         'DPnet and KADpeil Bonaire',
         NULL,
         'NSGI',
-        'DPnet_Bonaire',
+        'Bonaire_DPnet',
         'NSGI',
-        'KADpeil_Bonaire',
+        'Bonaire_KADpeil',
+        0
+    ),
+    (
+        'NSGI',
+        'St_Eustatius_DPnet_Height',
+        'DPnet and Height Sint Eustatius',
+        NULL,
+        'NSGI',
+        'St_Eustatius_DPnet',
+        'NSGI',
+        'St_Eustatius_Height',
+        0
+    ),
+    (
+        'NSGI',
+        'Saba_DPnet_Height',
+        'DPnet and Height Saba',
+        NULL,
+        'NSGI',
+        'Saba_DPnet',
+        'NSGI',
+        'Saba_Height',
         0
     );
 
@@ -1194,10 +1305,32 @@ INSERT INTO
 VALUES
     (
         'NSGI',
-        'DPnet_KADpeil_Bonaire_USAGE',
+        'Bonaire_DPnet_KADpeil_USAGE',
         'compound_crs',
         'NSGI',
-        'DPnet_KADpeil_Bonaire',
+        'Bonaire_DPnet_KADpeil',
+        'EPSG',
+        '3805',
+        'EPSG',
+        '1027'
+    ),
+    (
+        'NSGI',
+        'St_Eustatius_DPnet_Height_USAGE',
+        'compound_crs',
+        'NSGI',
+        'St_Eustatius_DPnet_Height',
+        'EPSG',
+        '3805',
+        'EPSG',
+        '1027'
+    ),
+    (
+        'NSGI',
+        'Saba_DPnet_Height_USAGE',
+        'compound_crs',
+        'NSGI',
+        'Saba_DPnet_Height',
         'EPSG',
         '3805',
         'EPSG',
