@@ -419,21 +419,6 @@ VALUES
         'StEustatius2020_GEOGRAPHIC_3D',
         0.1000,
         0
-    ),
-    (
-        'NSGI',
-        'DPnet_StEustatius_TO_ITRF2014',
-        'DPnet StEustatius to ITRF2014 time-dependent transformation',
-        'time-dependent transformation between DPnet StEustatius and ITRF2104',
-        'PROJ',
-        'PROJString',
-        '+proj=pipeline +step +proj=axisswap +order=2,1 +step +proj=unitconvert +xy_in=deg +xy_out=rad +step +proj=cart +ellps=intl +step +proj=helmert +x=1276.2485 +y=-2016.6406 +z=667.4403 +rx=-101.005288 +ry=212.913401 +rz=-68.432770 +s=-431.59604 +dx=0.00743 +dy=0.00875 +dz=0.01402 +t_epoch=2020.00 +convention=coordinate_frame +exact +step +proj=cart +inv +ellps=GRS80 +step +proj=axisswap +order=2,1 +step +proj=unitconvert +xy_in=rad +xy_out=deg',
-        'NSGI',
-        'DPnet_StEustatius_GEOGRAPHIC_3D',
-        'EPSG',
-        '7912',
-        0.1000,
-        0
     );
 
 INSERT INTO
