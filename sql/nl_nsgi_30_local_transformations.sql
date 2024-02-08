@@ -526,7 +526,7 @@ VALUES
         'geoid_like',
         0,
         NULL,
-        'https://github.com/GeodetischeInfrastructuur/transformations/releases/download/1.0.3/bq_nsgi_bongeo2004.tif',
+        'https://github.com/GeodetischeInfrastructuur/transformations/releases/download/1.1.0/bq_nsgi_bongeo2004.tif',
         1,
         1,
         NULL
@@ -539,7 +539,7 @@ VALUES
         'geoid_like',
         0,
         NULL,
-        'https://github.com/GeodetischeInfrastructuur/transformations/releases/download/1.0.3/nllat2018.gtx',
+        'https://github.com/GeodetischeInfrastructuur/transformations/releases/download/1.1.0/nllat2018.gtx',
         1,
         1,
         NULL
