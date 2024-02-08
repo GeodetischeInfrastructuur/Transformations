@@ -25,8 +25,8 @@ repository.
 
 > :warning: this repository contains 2 proj.db. The first (the default)
 > `proj.db` has the sql scripts nl_nsgi_00.. till ns_nsgi_50.. applied. The
-> second `proj.global.time.dependent.transformations.db` has the sql applied in
-> the script 'nl_nsgi_60_global_time_dependent_transformations.sql' adding time
+> second `proj.time.dependent.transformations.db` has the sql applied in
+> the script 'nl_nsgi_60_time_dependent_transformations.sql' adding time
 > dependent transformations. For this second one there are additional rules that
 > need to be taken into account, regarding the usage of a epoch. And that is to
 > provide a input epoch and not use a transformations default epoch when
@@ -37,13 +37,13 @@ repository.
 >
 > ```bash
 > mv proj.db proj.db.bak
-> mv proj.global.time.dependent.transformations.db proj.db
+> mv proj.time.dependent.transformations.db proj.db
 > ```
 >
 > Or through the creating of a symbolic link
 >
 > ```bash
-> ln -s proj.global.time.dependent.transformations.db proj.db
+> ln -s proj.time.dependent.transformations.db proj.db
 > ```
 
 ## Docker
