@@ -50,7 +50,7 @@ VALUES
         'NSGI',
         'WGS84_GEOGRAPHIC_2D',
         'EPSG',
-        '1298',
+        '1262',
         'EPSG',
         '1027'
     );
@@ -270,8 +270,8 @@ VALUES
         'Geocentric translations (geog2D domain)',
         'NSGI',
         'Bonaire2004_GEOGRAPHIC_2D',
-        'EPSG',
-        '4326',
+        'NSGI',
+        'WGS84_GEOGRAPHIC_2D',
         2.0,
         0.0,
         0.0,
@@ -320,8 +320,8 @@ VALUES
         'Geocentric translations (geog2D domain)',
         'NSGI',
         'Saba2020_GEOGRAPHIC_2D',
-        'EPSG',
-        '4326',
+        'NSGI',
+        'WGS84_GEOGRAPHIC_2D',
         2.0,
         0.0,
         0.0,
@@ -370,8 +370,8 @@ VALUES
         'Geocentric translations (geog2D domain)',
         'NSGI',
         'St_Eustatius2020_GEOGRAPHIC_2D',
-        'EPSG',
-        '4326',
+        'NSGI',
+        'WGS84_GEOGRAPHIC_2D',
         2.0,
         0.0,
         0.0,
@@ -433,7 +433,7 @@ VALUES
         'EPSG',
         '1262',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -444,7 +444,7 @@ VALUES
         'EPSG',
         '1262',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -455,7 +455,7 @@ VALUES
         'EPSG',
         '1262',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -464,9 +464,9 @@ VALUES
         'NSGI',
         'Bonaire2004_TO_WGS_84_NULL',
         'EPSG',
-        '1262',
+        '3822',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -475,9 +475,9 @@ VALUES
         'NSGI',
         'Saba2020_TO_WGS_84_NULL',
         'EPSG',
-        '1262',
+        '3820',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -486,9 +486,9 @@ VALUES
         'NSGI',
         'St_Eustatius2020_TO_WGS_84_NULL',
         'EPSG',
-        '1262',
+        '3820',
         'EPSG',
-        '1027'
+        '1181'
     );
 
 -------------------------------------------------------
@@ -547,6 +547,32 @@ VALUES
         'WGS84_GEOGRAPHIC_2D',
         0.001,
         'NSGI 2019',
+        0
+    ),
+    (
+        'NSGI',
+        'St_Eustatius_TO_WGS84_NULL',
+        'St Eustatius to WGS84 via St_Eustatius2020 null transformation',
+        'Transformation based on BESTRANS documentation',
+        'NSGI',
+        'St_Eustatius_Local_2020_GEOGRAPHIC_2D',
+        'NSGI',
+        'WGS84_GEOGRAPHIC_2D',
+        0.001,
+        'NSGI 2023',
+        0
+    ),
+    (
+        'NSGI',
+        'Saba_TO_WGS84_NULL',
+        'Saba to WGS84 via Saba2020 null transformation',
+        'Transformation based on BESTRANS documentation',
+        'NSGI',
+        'Saba_Local_2020_GEOGRAPHIC_2D',
+        'NSGI',
+        'WGS84_GEOGRAPHIC_2D',
+        0.001,
+        'NSGI 2023',
         0
     );
 
@@ -614,6 +640,34 @@ VALUES
         4,
         'NSGI',
         'WGS_84_TO_ETRF2000_NULL'
+    ),
+    (
+        'NSGI',
+        'Saba_TO_WGS84_NULL',
+        1,
+        'NSGI',
+        'Saba_TO_Saba2020'
+    ),
+    (
+        'NSGI',
+        'Saba_TO_WGS84_NULL',
+        2,
+        'NSGI',
+        'Saba2020_TO_WGS_84_NULL'
+    ),
+    (
+        'NSGI',
+        'St_Eustatius_TO_WGS84_NULL',
+        1,
+        'NSGI',
+        'St_Eustatius_TO_St_Eustatius2020'
+    ),
+    (
+        'NSGI',
+        'St_Eustatius_TO_WGS84_NULL',
+        2,
+        'NSGI',
+        'St_Eustatius2020_TO_WGS_84_NULL'
     );
 
 INSERT INTO
@@ -659,6 +713,28 @@ VALUES
         'RD_Bessel_TO_WGS84_NULL',
         'EPSG',
         '1262',
+        'EPSG',
+        '1181'
+    ),
+    (
+        'NSGI',
+        'Saba_TO_WGS84_NULL_USAGE',
+        'concatenated_operation',
+        'NSGI',
+        'Saba_TO_WGS84_NULL',
+        'EPSG',
+        '3820',
+        'EPSG',
+        '1181'
+    ),
+    (
+        'NSGI',
+        'St_Eustatius_TO_WGS84_NULL_USAGE',
+        'concatenated_operation',
+        'NSGI',
+        'St_Eustatius_TO_WGS84_NULL',
+        'EPSG',
+        '3820',
         'EPSG',
         '1181'
     );

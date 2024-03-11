@@ -226,7 +226,7 @@ VALUES
         'EPSG',
         '1262',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -237,7 +237,7 @@ VALUES
         'EPSG',
         '1298',
         'EPSG',
-        '1024'
+        '1181'
     ),
     (
         'NSGI',
@@ -248,7 +248,7 @@ VALUES
         'EPSG',
         '3822',
         'EPSG',
-        '1027'
+        '1181'
     );
 
 -------------------------------------------------------
@@ -392,7 +392,7 @@ VALUES
     ),
     (
         'NSGI',
-        'Saba_DPnet_TO_Saba2020',
+        'Saba_TO_Saba2020',
         'Saba DPnet to Saba2020 transformation',
         'Transformation between Saba DPnet and Saba2020',
         'PROJ',
@@ -422,7 +422,7 @@ VALUES
     ),
     (
         'NSGI',
-        'St_Eustatius_DPnet_TO_St_Eustatius2020',
+        'St_Eustatius_TO_St_Eustatius2020',
         'St_Eustatius DPnet to St_Eustatius2020 transformation',
         'transformation between DPnet St_Eustatius and St_Eustatius2020',
         'PROJ',
@@ -473,7 +473,7 @@ VALUES
         'EPSG',
         '3822',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -484,27 +484,27 @@ VALUES
         'EPSG',
         '3822',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
-        'Saba_DPnet_TO_Saba2020_USAGE',
+        'Saba_TO_Saba2020_USAGE',
         'other_transformation',
         'NSGI',
-        'Saba_DPnet_TO_Saba2020',
+        'Saba_TO_Saba2020',
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
-        'St_Eustatius_DPnet_TO_St_Eustatius2020_USAGE',
+        'St_Eustatius_TO_St_Eustatius2020_USAGE',
         'other_transformation',
         'NSGI',
-        'St_Eustatius_DPnet_TO_St_Eustatius2020',
+        'St_Eustatius_TO_St_Eustatius2020',
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1181'
     );

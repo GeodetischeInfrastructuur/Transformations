@@ -385,7 +385,7 @@ VALUES
         'EPSG',
         '1262',
         'EPSG',
-        '1051'
+        '1181'
     ),
     (
         'NSGI',
@@ -396,7 +396,7 @@ VALUES
         'EPSG',
         '3822',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -407,7 +407,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1181'
     ),    (
         'NSGI',
         'St_Eustatius_Local_2020_GEOGRAPHIC_3D_to_St_Eustatius_Height_USAGE',
@@ -417,7 +417,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',

@@ -25,6 +25,30 @@ VALUES
         8,
         0
     );
+-------------------------------------------------------
+--     Modify extend of NL CRSs
+-------------------------------------------------------
+UPDATE
+    usage
+SET
+    extent_auth_name = 'NSGI' AND extent_code = 'EXTENT_3D_RDNAPTRANS2018'
+WHERE
+    object_auth_name = 'EPSG' AND code = '28992'
+;
+UPDATE
+    usage
+SET
+    extent_auth_name = 'NSGI' AND extent_code = 'EXTENT_3D_RDNAPTRANS2018'
+WHERE
+    object_auth_name = 'EPSG' AND code = '7415'
+;
+UPDATE
+    usage
+SET
+    extent_auth_name = 'NSGI' AND extent_code = 'EXTENT_3D_RDNAPTRANS2018'
+WHERE
+    object_auth_name = 'EPSG' AND code = '9286'
+;
 
 -------------------------------------------------------
 --     Add additonal NL datum (AGRS.NL)
@@ -63,7 +87,7 @@ VALUES
     ),
     (
         'NSGI',
-        'Bonaire_DPnet_Datum',
+        'Bonaire_Datum',
         'Bonaire',
         'Geodetic Datum for Bonaire DPnet',
         'EPSG',
@@ -93,7 +117,7 @@ VALUES
     ),
     (
         'NSGI',
-        'Saba_DPnet_Datum',
+        'Saba_Datum',
         'Saba',
         'Geodetic Datum for Saba DPnet',
         'EPSG',
@@ -108,7 +132,7 @@ VALUES
     ),
     (
         'NSGI',
-        'St_Eustatius_DPnet_Datum',
+        'St_Eustatius_Datum',
         'St Eustatius',
         'Geodetic Datum for St Eustatius DPnet',
         'EPSG',
@@ -163,10 +187,10 @@ VALUES
     ),
     (
         'NSGI',
-        'Bonaire_DPnet_Datum_USAGE',
+        'Bonaire_Datum_USAGE',
         'geodetic_datum',
         'NSGI',
-        'Bonaire_DPnet_Datum',
+        'Bonaire_Datum',
         'EPSG',
         '3822',
         'EPSG',
@@ -185,10 +209,10 @@ VALUES
     ),
     (
         'NSGI',
-        'Saba_DPnet_Datum_USAGE',
+        'Saba_Datum_USAGE',
         'geodetic_datum',
         'NSGI',
-        'Saba_DPnet_Datum',
+        'Saba_Datum',
         'EPSG',
         '3820',
         'EPSG',
@@ -196,10 +220,10 @@ VALUES
     ),
     (
         'NSGI',
-        'St_Eustatius_DPnet_Datum_USAGE',
+        'St_Eustatius_Datum_USAGE',
         'geodetic_datum',
         'NSGI',
-        'St_Eustatius_DPnet_Datum',
+        'St_Eustatius_Datum',
         'EPSG',
         '3820',
         'EPSG',
@@ -297,7 +321,7 @@ VALUES
         'EPSG',
         '6500',
         'NSGI',
-        'Bonaire_DPnet_Datum',
+        'Bonaire_Datum',
         NULL,
         0
     ),
@@ -310,7 +334,7 @@ VALUES
         'EPSG',
         '6423',
         'NSGI',
-        'Bonaire_DPnet_Datum',
+        'Bonaire_Datum',
         NULL,
         0
     ),
@@ -323,7 +347,7 @@ VALUES
         'EPSG',
         '6422',
         'NSGI',
-        'Bonaire_DPnet_Datum',
+        'Bonaire_Datum',
         NULL,
         0
     ),
@@ -375,7 +399,7 @@ VALUES
         'EPSG',
         '6500',
         'NSGI',
-        'Saba_DPnet_Datum',
+        'Saba_Datum',
         NULL,
         0
     ),
@@ -388,7 +412,7 @@ VALUES
         'EPSG',
         '6423',
         'NSGI',
-        'Saba_DPnet_Datum',
+        'Saba_Datum',
         NULL,
         0
     ),
@@ -401,7 +425,7 @@ VALUES
         'EPSG',
         '6422',
         'NSGI',
-        'Saba_DPnet_Datum',
+        'Saba_Datum',
         NULL,
         0
     ),
@@ -453,7 +477,7 @@ VALUES
         'EPSG',
         '6500',
         'NSGI',
-        'St_Eustatius_DPnet_Datum',
+        'St_Eustatius_Datum',
         NULL,
         0
     ),
@@ -466,7 +490,7 @@ VALUES
         'EPSG',
         '6423',
         'NSGI',
-        'St_Eustatius_DPnet_Datum',
+        'St_Eustatius_Datum',
         NULL,
         0
     ),
@@ -479,7 +503,7 @@ VALUES
         'EPSG',
         '6422',
         'NSGI',
-        'St_Eustatius_DPnet_Datum',
+        'St_Eustatius_Datum',
         NULL,
         0
     ),
@@ -556,7 +580,7 @@ VALUES
         'EPSG',
         '1298',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -567,7 +591,7 @@ VALUES
         'EPSG',
         '1298',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -578,7 +602,7 @@ VALUES
         'EPSG',
         '1298',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -589,7 +613,7 @@ VALUES
         'EPSG',
         '3822',
         'EPSG',
-        '1027'
+        '1269'
     ),
     (
         'NSGI',
@@ -600,7 +624,7 @@ VALUES
         'EPSG',
         '3822',
         'EPSG',
-        '1027'
+        '1269'
     ),
     (
         'NSGI',
@@ -611,7 +635,7 @@ VALUES
         'EPSG',
         '3822',
         'EPSG',
-        '1027'
+        '1269'
     ),
     (
         'NSGI',
@@ -622,7 +646,7 @@ VALUES
         'EPSG',
         '3822',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -633,7 +657,7 @@ VALUES
         'EPSG',
         '3822',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -644,7 +668,7 @@ VALUES
         'EPSG',
         '3822',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -655,7 +679,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1269'
     ),
     (
         'NSGI',
@@ -666,7 +690,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1269'
     ),
     (
         'NSGI',
@@ -677,7 +701,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1269'
     ),
     (
         'NSGI',
@@ -688,7 +712,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -699,7 +723,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -710,7 +734,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -721,7 +745,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1269'
     ),
     (
         'NSGI',
@@ -732,7 +756,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1269'
     ),
     (
         'NSGI',
@@ -743,7 +767,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1269'
     ),
     (
         'NSGI',
@@ -754,7 +778,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -765,7 +789,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -776,7 +800,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1181'
     );
 
 --- Map projections
@@ -962,7 +986,7 @@ VALUES
         'EPSG',
         '3822',
         'EPSG',
-        '1027'
+        '1056'
     ),
     (
         'NSGI',
@@ -973,7 +997,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1056'
     ),
     (
         'NSGI',
@@ -984,7 +1008,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1056'
     );
 
 --- Projected crs
@@ -1056,7 +1080,7 @@ VALUES
         'EPSG',
         '3822',
         'EPSG',
-        '1027'
+        '1056'
     ),
     (
         'NSGI',
@@ -1067,7 +1091,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1056'
     ),
     (
         'NSGI',
@@ -1078,7 +1102,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1056'
     );
 
 -- vertical datum
@@ -1142,7 +1166,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1179'
     ),
     (
     'NSGI',
@@ -1153,7 +1177,7 @@ VALUES
     'EPSG',
     '3820',
     'EPSG',
-    '1027'
+    '1179'
     ),
     (
     'NSGI',
@@ -1164,7 +1188,7 @@ VALUES
     'EPSG',
     '3822',
     'EPSG',
-    '1027'
+    '1179'
     );
 
 -- vertical crss
@@ -1227,7 +1251,7 @@ VALUES
         'EPSG',
         '3822',
         'EPSG',
-        '1027'
+        '1179'
     ),
     (
         'NSGI',
@@ -1238,7 +1262,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1179'
     ),
     (
         'NSGI',
@@ -1249,7 +1273,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1179'
     )    ;
 
 --- Compound crs
@@ -1312,7 +1336,7 @@ VALUES
         'EPSG',
         '3822',
         'EPSG',
-        '1027'
+        '1142'
     ),
     (
         'NSGI',
@@ -1323,7 +1347,7 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1142'
     ),
     (
         'NSGI',
@@ -1334,5 +1358,5 @@ VALUES
         'EPSG',
         '3820',
         'EPSG',
-        '1027'
+        '1142'
     );
