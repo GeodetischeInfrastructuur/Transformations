@@ -246,7 +246,7 @@ VALUES
         'NSGI',
         'Bonaire2004_TO_ITRF2000',
         'EPSG',
-        '3805',
+        '3822',
         'EPSG',
         '1027'
     );
@@ -441,7 +441,7 @@ VALUES
         'NSGI',
         'Bonaire_DPnet_TO_Bonaire2004',
         'EPSG',
-        '3805',
+        '3822',
         'EPSG',
         '1027'
     ),
@@ -452,7 +452,7 @@ VALUES
         'NSGI',
         'Bonaire_DPnet_KADpeil_TO_Bonaire2004',
         'EPSG',
-        '3805',
+        '3822',
         'EPSG',
         '1027'
     ),
@@ -463,7 +463,7 @@ VALUES
         'NSGI',
         'Saba_DPnet_TO_Saba2020',
         'EPSG',
-        '3805',
+        '3820',
         'EPSG',
         '1027'
     ),
@@ -474,7 +474,7 @@ VALUES
         'NSGI',
         'St_Eustatius_DPnet_TO_St_Eustatius2020',
         'EPSG',
-        '3805',
+        '3820',
         'EPSG',
         '1027'
     );

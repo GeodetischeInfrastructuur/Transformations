@@ -728,3 +728,22 @@ UPDATE
     authority_to_authority_preference
 SET
     allowed_authorities = 'NSGI,PROJ';
+    
+    
+-------------------------------------------------------
+--     Modify name of CRSs
+-------------------------------------------------------
+UPDATE
+    geodetic_crs
+SET
+    name = 'CRS84'
+WHERE
+    auth_name = 'OGC' AND code = 'CRS84'
+;
+UPDATE
+    geodetic_crs
+SET
+    name = 'CRS84h'
+WHERE
+    auth_name = 'OGC' AND code = 'CRS84h'
+;

@@ -235,7 +235,7 @@ VALUES
         'NSGI',
         'Saba2020_TO_ITRF2014',
         'EPSG',
-        '3805',
+        '3820',
         'EPSG',
         '1027'
     ),
@@ -246,7 +246,7 @@ VALUES
         'NSGI',
         'St_Eustatius2020_TO_ITRF2014',
         'EPSG',
-        '3805',
+        '3820',
         'EPSG',
         '1027'
     );

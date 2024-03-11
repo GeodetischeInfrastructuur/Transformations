@@ -394,7 +394,7 @@ VALUES
         'NSGI',
         'Bonaire_DPnet_to_KADpeil',
         'EPSG',
-        '3805',
+        '3822',
         'EPSG',
         '1027'
     ),
@@ -405,7 +405,7 @@ VALUES
         'NSGI',
         'Saba_Local_2020_GEOGRAPHIC_3D_to_Saba_Height',
         'EPSG',
-        '3805',
+        '3820',
         'EPSG',
         '1027'
     ),    (
@@ -415,7 +415,7 @@ VALUES
         'NSGI',
         'St_Eustatius_Local_2020_GEOGRAPHIC_3D_to_St_Eustatius_Height',
         'EPSG',
-        '3805',
+        '3820',
         'EPSG',
         '1027'
     ),
