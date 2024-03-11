@@ -263,7 +263,7 @@ VALUES
     (
         'NSGI',
         'Bonaire2004_TO_WGS_84_NULL',
-        'Bonaire DPnet TO WGS 84 null transformation',
+        'Bonaire 2004 TO WGS 84 null transformation',
         '',
         'EPSG',
         '9603',
@@ -313,7 +313,7 @@ VALUES
     (
         'NSGI',
         'Saba2020_TO_WGS_84_NULL',
-        'Saba DPnet TO WGS 84 null transformation',
+        'Saba 2020 TO WGS 84 null transformation',
         '',
         'EPSG',
         '9603',
@@ -363,7 +363,7 @@ VALUES
     (
         'NSGI',
         'St_Eustatius2020_TO_WGS_84_NULL',
-        'St_Eustatius DPnet TO WGS 84 null transformation',
+        'St_Eustatius 2020 TO WGS 84 null transformation',
         '',
         'EPSG',
         '9603',
