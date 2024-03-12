@@ -112,9 +112,9 @@ VALUES
         '1056',
         'Time-dependent Coordinate Frame rotation (geocen)',
         'NSGI',
-        'Saba2020_GEOGRAPHIC_3D',
+        'Saba2020_GEOGRAPHIC_2D',
         'EPSG',
-        '7789',
+        '9000',
         '0.1',
         '0.0',
         '0.0',
@@ -162,9 +162,9 @@ VALUES
         '1056',
         'Time-dependent Coordinate Frame rotation (geocen)',
         'NSGI',
-        'St_Eustatius2020_GEOGRAPHIC_3D',
+        'St_Eustatius2020_GEOGRAPHIC_2D',
         'EPSG',
-        '7789',
+        '9000',
         '0.1',
         '0.0',
         '0.0',
@@ -226,7 +226,7 @@ VALUES
         'EPSG',
         '1262',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -235,9 +235,9 @@ VALUES
         'NSGI',
         'Saba2020_TO_ITRF2014',
         'EPSG',
-        '3805',
+        '3820',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -246,9 +246,9 @@ VALUES
         'NSGI',
         'St_Eustatius2020_TO_ITRF2014',
         'EPSG',
-        '3805',
+        '3820',
         'EPSG',
-        '1027'
+        '1181'
     );
 
 -------------------------------------------------------
@@ -272,7 +272,7 @@ INSERT INTO
 VALUES
     (
         'NSGI',
-        'ETRS89_TO_ITRF2014_TIMEDEPENDENT',
+        'ETRS89_TO_ITRF2014',
         'ETRS89 to ITRF2014 _TIMEDEPENDENT',
         '',
         'EPSG',
@@ -308,6 +308,32 @@ VALUES
         0.001,
         'NSGI 2019',
         0
+    ),
+    (
+        'NSGI',
+        'Saba_TO_ITRF2014',
+        'Saba to ITRF2014 via Saba2020',
+        'Transformation based on BESTRANS documentation',
+        'NSGI',
+        'Saba_Local_2020_GEOGRAPHIC_2D',
+        'EPSG',
+        '9000',
+        0.001,
+        'NSGI 2023',
+        0
+    ),
+    (
+        'NSGI',
+        'St_Eustatius_TO_ITRF2014',
+        'St Eustatius to ITRF2014 via St_Eustatius2020',
+        'Transformation based on BESTRANS documentation',
+        'NSGI',
+        'St_Eustatius_Local_2020_GEOGRAPHIC_2D',
+        'EPSG',
+        '9000',
+        0.001,
+        'NSGI 2023',
+        0
     );
 
 INSERT INTO
@@ -321,14 +347,14 @@ INSERT INTO
 VALUES
     (
         'NSGI',
-        'ETRS89_TO_ITRF2014_TIMEDEPENDENT',
+        'ETRS89_TO_ITRF2014',
         1,
         'NSGI',
         'ETRS89_TO_ETRF2000_preferred'
     ),
     (
         'NSGI',
-        'ETRS89_TO_ITRF2014_TIMEDEPENDENT',
+        'ETRS89_TO_ITRF2014',
         2,
         'NSGI',
         'ITRF2014_TO_ETRF2000'
@@ -374,6 +400,34 @@ VALUES
         4,
         'NSGI',
         'ITRF2014_TO_ETRF2000'
+    ),
+    (
+        'NSGI',
+        'Saba_TO_ITRF2014',
+        1,
+        'NSGI',
+        'Saba_TO_Saba2020'
+    ),
+    (
+        'NSGI',
+        'Saba_TO_ITRF2014',
+        2,
+        'NSGI',
+        'Saba2020_TO_ITRF2014'
+    ),
+    (
+        'NSGI',
+        'St_Eustatius_TO_ITRF2014',
+        1,
+        'NSGI',
+        'St_Eustatius_TO_St_Eustatius2020'
+    ),
+    (
+        'NSGI',
+        'St_Eustatius_TO_ITRF2014',
+        2,
+        'NSGI',
+        'St_Eustatius2020_TO_ITRF2014'
     );
 
 INSERT INTO
@@ -391,10 +445,10 @@ INSERT INTO
 VALUES
     (
         'NSGI',
-        'ETRS89_TO_ITRF2014_TIMEDEPENDENT_USAGE',
+        'ETRS89_TO_ITRF2014_USAGE',
         'concatenated_operation',
         'NSGI',
-        'ETRS89_TO_ITRF2014_TIMEDEPENDENT',
+        'ETRS89_TO_ITRF2014',
         'EPSG',
         '1262',
         'EPSG',
@@ -419,6 +473,28 @@ VALUES
         'RD_Bessel_TO_ITRF2014',
         'EPSG',
         '1262',
+        'EPSG',
+        '1181'
+    ),
+    (
+        'NSGI',
+        'Saba_TO_ITRF2014_USAGE',
+        'concatenated_operation',
+        'NSGI',
+        'Saba_TO_ITRF2014',
+        'EPSG',
+        '3820',
+        'EPSG',
+        '1181'
+    ),
+    (
+        'NSGI',
+        'St_Eustatius_TO_ITRF2014_USAGE',
+        'concatenated_operation',
+        'NSGI',
+        'St_Eustatius_TO_ITRF2014',
+        'EPSG',
+        '3820',
         'EPSG',
         '1181'
     );

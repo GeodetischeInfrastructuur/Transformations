@@ -226,7 +226,7 @@ VALUES
         'EPSG',
         '1262',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -237,7 +237,7 @@ VALUES
         'EPSG',
         '1298',
         'EPSG',
-        '1024'
+        '1181'
     ),
     (
         'NSGI',
@@ -246,9 +246,9 @@ VALUES
         'NSGI',
         'Bonaire2004_TO_ITRF2000',
         'EPSG',
-        '3805',
+        '3822',
         'EPSG',
-        '1027'
+        '1181'
     );
 
 -------------------------------------------------------
@@ -392,14 +392,29 @@ VALUES
     ),
     (
         'NSGI',
-        'Saba_DPnet_TO_Saba2020',
-        'DPnet Saba to Saba2020 transformation',
+        'Saba_TO_Saba2020',
+        'Saba DPnet to Saba2020 transformation',
         'Transformation between Saba DPnet and Saba2020',
         'PROJ',
         'PROJString',
         '+proj=pipeline +step +proj=axisswap +order=2,1 +step +proj=unitconvert +xy_in=deg +xy_out=rad +step +proj=cart +ellps=intl +step +proj=helmert +x=1138.7432 +y=-2064.4761 +z=110.7016 +rx=-214.615206 +ry=479.360036 +rz=-164.703951 +s=-402.32073 +convention=coordinate_frame +exact +step +proj=cart +inv +ellps=GRS80 +step +proj=axisswap +order=2,1 +step +proj=unitconvert +xy_in=rad +xy_out=deg',
         'NSGI',
-        'Saba_Local_2020_GEOGRAPHIC_3D',
+        'Saba_Local_2020_GEOGRAPHIC_2D',
+        'NSGI',
+        'Saba2020_GEOGRAPHIC_2D',
+        0.1000,
+        0
+    ),
+    (
+        'NSGI',
+        'Saba_DPnet_Height_TO_Saba2020',
+        'Saba DPnet Height to Saba2020 transformation',
+        'Transformation between Saba DPnet Height and Saba2020',
+        'PROJ',
+        'PROJString',
+        '+proj=pipeline +step +inv +proj=tmerc +lat_0=0 +lon_0=-63 +k=0.9996 +x_0=29973.97 +y_0=-1947925.94 +ellps=intl +step +proj=vgridshift +grids=null +multiplier=1 +step +proj=cart +ellps=intl +step +proj=helmert +x=1138.7432 +y=-2064.4761 +z=110.7016 +rx=-214.615206 +ry=479.360036 +rz=-164.703951 +s=-402.32073 +convention=coordinate_frame +exact +step +inv +proj=cart +ellps=GRS80 +step +proj=axisswap +order=2,1 +step +proj=unitconvert +xy_in=rad +xy_out=deg',
+        'NSGI',
+        'Saba_DPnet_Height',
         'NSGI',
         'Saba2020_GEOGRAPHIC_3D',
         0.1000,
@@ -407,14 +422,29 @@ VALUES
     ),
     (
         'NSGI',
-        'St_Eustatius_DPnet_TO_St_Eustatius2020',
-        'DPnet St_Eustatius to St_Eustatius2020 transformation',
+        'St_Eustatius_TO_St_Eustatius2020',
+        'St_Eustatius DPnet to St_Eustatius2020 transformation',
         'transformation between DPnet St_Eustatius and St_Eustatius2020',
         'PROJ',
         'PROJString',
         '+proj=pipeline +step +proj=axisswap +order=2,1 +step +proj=unitconvert +xy_in=deg +xy_out=rad +step +proj=cart +ellps=intl +step +proj=helmert +x=1276.2485 +y=-2016.6406 +z=667.4403 +rx=-101.005288 +ry=212.913401 +rz=-68.432770 +s=-431.59604 +convention=coordinate_frame +exact +step +proj=cart +inv +ellps=GRS80 +step +proj=axisswap +order=2,1 +step +proj=unitconvert +xy_in=rad +xy_out=deg',
         'NSGI',
-        'St_Eustatius_Local_2020_GEOGRAPHIC_3D',
+        'St_Eustatius_Local_2020_GEOGRAPHIC_2D',
+        'NSGI',
+        'St_Eustatius2020_GEOGRAPHIC_2D',
+        0.1000,
+        0
+    ),
+    (
+        'NSGI',
+        'St_Eustatius_DPnet_Height_TO_St_Eustatius2020',
+        'St_Eustatius DPnet Height to St_Eustatius2020 transformation',
+        'transformation between DPnet Height St_Eustatius and St_Eustatius2020',
+        'PROJ',
+        'PROJString',
+        '+proj=pipeline +step +inv +proj=utm +zone=20 +ellps=intl +step +proj=vgridshift +grids=null +multiplier=1 +step +proj=cart +ellps=intl +step +proj=helmert +x=1276.2485 +y=-2016.6406 +z=667.4403 +rx=-101.005288 +ry=212.913401 +rz=-68.432770 +s=-431.59604 +convention=coordinate_frame +exact +step +inv +proj=cart +ellps=GRS80 +step +proj=axisswap +order=2,1 +step +proj=unitconvert +xy_in=rad +xy_out=deg',
+        'NSGI',
+        'St_Eustatius_DPnet_Height',
         'NSGI',
         'St_Eustatius2020_GEOGRAPHIC_3D',
         0.1000,
@@ -441,9 +471,9 @@ VALUES
         'NSGI',
         'Bonaire_DPnet_TO_Bonaire2004',
         'EPSG',
-        '3805',
+        '3822',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -452,29 +482,29 @@ VALUES
         'NSGI',
         'Bonaire_DPnet_KADpeil_TO_Bonaire2004',
         'EPSG',
-        '3805',
+        '3822',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
-        'Saba_DPnet_TO_Saba2020_USAGE',
+        'Saba_TO_Saba2020_USAGE',
         'other_transformation',
         'NSGI',
-        'Saba_DPnet_TO_Saba2020',
+        'Saba_TO_Saba2020',
         'EPSG',
-        '3805',
+        '3820',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
-        'St_Eustatius_DPnet_TO_St_Eustatius2020_USAGE',
+        'St_Eustatius_TO_St_Eustatius2020_USAGE',
         'other_transformation',
         'NSGI',
-        'St_Eustatius_DPnet_TO_St_Eustatius2020',
+        'St_Eustatius_TO_St_Eustatius2020',
         'EPSG',
-        '3805',
+        '3820',
         'EPSG',
-        '1027'
+        '1181'
     );
