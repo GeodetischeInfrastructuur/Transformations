@@ -12,38 +12,37 @@ transformations according to the recommendations of the NSGI (see image below).
    * added NSGI to authority references
    * added extents of NSGI transformations
    * added additional NL datum (AGRS.NL)
-   * added additional NL crss
+   * added additional NL CRSs
    * added additional NSGI transformations
 
 2. A Dockerfile with [PROJ](https://proj.org/en/9.3/) configured to use this
    NSGI authority as a base
 
-These will for the base for the transformations that are defined by
+These will form the base for the transformations that are defined or recommended by
 [NSGI](https://www.nsgi.nl/) (Nederlandse Samenwerkingsverband Geodetische
-Infrastructuur). In the future additional transformations will be added to this
+Infrastructuur). In the future additional transformations might be added to this
 repository.
 
 > :warning: this repository contains 2 proj.db. The first (the default)
-> `proj.db` has the sql scripts nl_nsgi_00.. till ns_nsgi_50.. applied. The
-> second `proj.global.time.dependent.transformations.db` has the sql applied in
-> the script 'nl_nsgi_60_global_time_dependent_transformations.sql' adding time
-> dependent transformations. For this second one there are additional rules that
-> need to be taken into account, regarding the usage of a epoch. And that is to
-> provide a input epoch and not use a transformations default epoch when
-> applicable. When one wants to use this second proj.db this can be done in
-> multiple ways.
+> `proj.db` has the sql scripts nl_nsgi_00... till ns_nsgi_50... applied. The
+> second `proj.time.dependent.transformations.db` has the sql script
+> 'nl_nsgi_60_time_dependent_transformations.sql' applied for adding time
+> dependent transformations. For this second proj.db, a input epoch should be
+> provided (when applicable), to prevent the use of the default reference epoch
+> of the transformation. When one wants to use this second proj.db this can be done
+> in the following ways.
 >
 > Through a move command
 >
 > ```bash
 > mv proj.db proj.db.bak
-> mv proj.global.time.dependent.transformations.db proj.db
+> mv proj.time.dependent.transformations.db proj.db
 > ```
 >
-> Or through the creating of a symbolic link
+> or through the creating of a symbolic link
 >
 > ```bash
-> ln -s proj.global.time.dependent.transformations.db proj.db
+> ln -s proj.time.dependent.transformations.db proj.db
 > ```
 
 ## Docker
@@ -55,7 +54,7 @@ layer on top of PROJ; for instance use it with
 ### Build
 
 ```bash
-docker build -t ghcr.io/geodetischeinfrastructuur/transformations:1.0.3 .
+docker build -t ghcr.io/geodetischeinfrastructuur/transformations:1.1.1 .
 ```
 
 ### Run
@@ -63,13 +62,13 @@ docker build -t ghcr.io/geodetischeinfrastructuur/transformations:1.0.3 .
 To start an interactive terminal inside the container run:
 
 ```bash
-docker run -it --rm --name nsgi-proj ghcr.io/geodetischeinfrastructuur/transformations:1.0.3
+docker run -it --rm --name nsgi-proj ghcr.io/geodetischeinfrastructuur/transformations:1.1.1
 ```
 
 To invoke `projinfo` from your current terminal sessions run:
 
 ```bash
-docker run --rm --name nsgi-proj ghcr.io/geodetischeinfrastructuur/transformations:1.0.3 projinfo
+docker run --rm --name nsgi-proj ghcr.io/geodetischeinfrastructuur/transformations:1.1.1 projinfo
 ```
 
 ## Test

@@ -385,7 +385,7 @@ VALUES
         'EPSG',
         '1262',
         'EPSG',
-        '1051'
+        '1181'
     ),
     (
         'NSGI',
@@ -394,9 +394,9 @@ VALUES
         'NSGI',
         'Bonaire_DPnet_to_KADpeil',
         'EPSG',
-        '3805',
+        '3822',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -405,9 +405,9 @@ VALUES
         'NSGI',
         'Saba_Local_2020_GEOGRAPHIC_3D_to_Saba_Height',
         'EPSG',
-        '3805',
+        '3820',
         'EPSG',
-        '1027'
+        '1181'
     ),    (
         'NSGI',
         'St_Eustatius_Local_2020_GEOGRAPHIC_3D_to_St_Eustatius_Height_USAGE',
@@ -415,9 +415,9 @@ VALUES
         'NSGI',
         'St_Eustatius_Local_2020_GEOGRAPHIC_3D_to_St_Eustatius_Height',
         'EPSG',
-        '3805',
+        '3820',
         'EPSG',
-        '1027'
+        '1181'
     ),
     (
         'NSGI',
@@ -526,7 +526,7 @@ VALUES
         'geoid_like',
         0,
         NULL,
-        'https://github.com/GeodetischeInfrastructuur/transformations/releases/download/1.0.3/bq_nsgi_bongeo2004.tif',
+        'https://github.com/GeodetischeInfrastructuur/transformations/releases/download/1.1.1/bq_nsgi_bongeo2004.tif',
         1,
         1,
         NULL
@@ -539,7 +539,7 @@ VALUES
         'geoid_like',
         0,
         NULL,
-        'https://github.com/GeodetischeInfrastructuur/transformations/releases/download/1.0.3/nllat2018.gtx',
+        'https://github.com/GeodetischeInfrastructuur/transformations/releases/download/1.1.1/nllat2018.gtx',
         1,
         1,
         NULL
