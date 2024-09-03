@@ -1118,6 +1118,7 @@ VALUES
         NULL,
         NULL,
         NULL,
+        NULL,
         0
     ),
     (
@@ -1129,12 +1130,14 @@ VALUES
         NULL,
         NULL,
         NULL,
+        NULL,
         0
     ),
     (
         'NSGI',
         'Saba_Height_Datum',
         'Height datum for Saba',
+        NULL,
         NULL,
         NULL,
         NULL,
