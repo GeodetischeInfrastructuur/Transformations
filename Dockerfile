@@ -1,4 +1,4 @@
-FROM osgeo/proj:9.3.1
+FROM osgeo/proj:9.4.1
 
 RUN apt update \
     && apt upgrade -y \
