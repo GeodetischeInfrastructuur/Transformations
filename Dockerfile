@@ -18,3 +18,4 @@ RUN cp /usr/share/proj/proj.db /usr/share/proj/proj.time.dependent.transformatio
 RUN cat /usr/share/proj/nl_nsgi_sql/nl_nsgi_60_time_dependent_transformations.sql | sqlite3 /usr/share/proj/proj.time.dependent.transformations.db
 
 ADD grids/nl_nsgi/ /usr/share/proj/
+ADD grids/null /usr/share/proj/
