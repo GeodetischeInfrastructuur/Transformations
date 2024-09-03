@@ -42,7 +42,7 @@ jobs:
           docker cp "${cont_id}:/usr/share/proj/proj.db" proj.db
           docker rm "$cont_id"
 
-        - name: 'Export proj.time.dependent.transformations.db as package from Docker image'
+      - name: 'Export proj.time.dependent.transformations.db as package from Docker image'
         run: |
           cont_id=$(docker create ghcr.io/${{ steps.lowercaserepo.outputs.REPO_LC }}:${{ github.event.release.tag_name }})
           docker cp "${cont_id}:/usr/share/proj/proj.time.dependent.transformations.db" proj.time.dependent.transformations.db
@@ -60,18 +60,10 @@ jobs:
         run: |
           gh release upload ${{ github.event.release.tag_name }} proj.time.dependent.transformations.db
 
-      - name: "Export grids from Docker image"
-        run: |
-          cont_id=$(docker create ghcr.io/${{ steps.lowercaserepo.outputs.REPO_LC }}:${{ github.event.release.tag_name }})
-          docker cp "${cont_id}:/usr/share/proj/bq_nsgi_bongeo2004.tif" bq_nsgi_bongeo2004.tif
-          docker cp "${cont_id}:/usr/share/proj/nllat2018.gtx" nllat2018.gtx
-          docker cp "${cont_id}:/usr/share/proj/null" null
-          docker rm "$cont_id"
-
       - name: "Upload grids"
         env:
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
-          gh release upload ${{ github.event.release.tag_name }} bq_nsgi_bongeo2004.tif
-          gh release upload ${{ github.event.release.tag_name }} nllat2018.gtx
-          gh release upload ${{ github.event.release.tag_name }} null
+          gh release upload ${{ github.event.release.tag_name }} grids/nl_nsgi/bq_nsgi_bongeo2004.tif
+          gh release upload ${{ github.event.release.tag_name }} grids/nl_nsgi/nllat2018.gtx
+          gh release upload ${{ github.event.release.tag_name }} grids/null
