@@ -5,7 +5,7 @@ RUN apt-get update && \
         moreutils && \
     pip install --upgrade setuptools
 
-RUN pip install pyproj==3.6.1
+RUN pip install pyproj==3.7.0
 
 # COPY the transformation grids, the modified proj.db and all the other proj files
-COPY --from=ghcr.io/geodetischeinfrastructuur/transformations:1.1.1 /usr/share/proj/ /usr/local/lib/python3.11/site-packages/pyproj/proj_dir/share/proj/
+COPY --from=ghcr.io/geodetischeinfrastructuur/transformations:2.0.0 /usr/share/proj/ /usr/local/lib/python3.11/site-packages/pyproj/proj_dir/share/proj/
