@@ -37,7 +37,6 @@ result = (
 )
 
 with open(sys.argv[1], "r") as Z001:
- 
     for _, point in enumerate(Z001.readlines()):
         nr, lat, lon, h, rdx, rdy, nap = point.split()
 
@@ -49,8 +48,12 @@ with open(sys.argv[1], "r") as Z001:
             rdx_calc, rdy_calc = etrf20002rd.transformers[0].transform(lat, lon)
 
         else:
-            lat_calc, lon_calc, h_calc = rdnap2etrf2000.transformers[0].transform(rdx, rdy, nap)
-            rdx_calc, rdy_calc, nap_calc = etrf20002rdnap.transformers[0].transform(lat, lon, h)
+            lat_calc, lon_calc, h_calc = rdnap2etrf2000.transformers[0].transform(
+                rdx, rdy, nap
+            )
+            rdx_calc, rdy_calc, nap_calc = etrf20002rdnap.transformers[0].transform(
+                lat, lon, h
+            )
 
         lat_diff, lon_diff, h_diff = (
             float(lat) - lat_calc,
@@ -68,5 +71,5 @@ with open(sys.argv[1], "r") as Z001:
  {lon},{h},{rdx},{rdy},{nap},{lat_calc:.9f},{lon_calc:.9f},\
  {h_calc:.4f},{rdx_calc:.4f},{rdy_calc:.4f},{nap_calc:.4f}\n"
 
-with open(sys.argv[2], "w") as f:    
+with open(sys.argv[2], "w") as f:
     f.write(result)
