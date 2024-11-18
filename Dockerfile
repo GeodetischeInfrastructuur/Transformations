@@ -1,20 +1,9 @@
 FROM osgeo/proj:9.4.1
-
-RUN apt update \
-    && apt upgrade -y \
-    && apt install -y \
-    sqlite3
-
-ADD sql /usr/share/proj/nl_nsgi_sql
-
-RUN cat /usr/share/proj/nl_nsgi_sql/nl_nsgi_00_authorities.sql | sqlite3 /usr/share/proj/proj.db
-RUN cat /usr/share/proj/nl_nsgi_sql/nl_nsgi_10_copy_transformations_from_projdb.sql | sqlite3 /usr/share/proj/proj.db
-RUN cat /usr/share/proj/nl_nsgi_sql/nl_nsgi_20_datum_and_crs.sql | sqlite3 /usr/share/proj/proj.db
-RUN cat /usr/share/proj/nl_nsgi_sql/nl_nsgi_30_local_transformations.sql | sqlite3 /usr/share/proj/proj.db
-RUN cat /usr/share/proj/nl_nsgi_sql/nl_nsgi_40_regional_transformations.sql | sqlite3 /usr/share/proj/proj.db
-RUN cat /usr/share/proj/nl_nsgi_sql/nl_nsgi_50_wgs84_null_transformations.sql | sqlite3 /usr/share/proj/proj.db
-
-RUN cp /usr/share/proj/proj.db /usr/share/proj/proj.time.dependent.transformations.db
-RUN cat /usr/share/proj/nl_nsgi_sql/nl_nsgi_60_time_dependent_transformations.sql | sqlite3 /usr/share/proj/proj.time.dependent.transformations.db
-
-ADD grids/nl_nsgi/ /usr/share/proj/
+RUN apt-get -y update &&  \
+    apt-get install --no-install-recommends -y \
+    sqlite3 && \
+    rm -rf /var/lib/apt/lists/*
+COPY sql /sql
+COPY grids/nl_nsgi/ /grids
+COPY configure-proj.sh /configure-proj.sh
+RUN /configure-proj.sh /usr/share/proj /sql /grids
