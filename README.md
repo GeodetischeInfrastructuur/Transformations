@@ -1,7 +1,7 @@
 # Transformations
 
 [![GitHub
-license](https://img.shields.io/github/license/GeodetischeInfrastructuur/Transformations)](https://github.com/GeodetischeInfrastructuur/Transformations/blob/master/LICENSE)
+license](https://img.shields.io/github/license/GeodetischeInfrastructuur/Transformations)](https://github.com/GeodetischeInfrastructuur/Transformations/blob/master/LICENSE) [![Static Badge](https://img.shields.io/badge/%20ghcr.io-geodetischeinfrastructuur%2Ftransformations-green?)](https://ghcr.io/geodetischeinfrastructuur/transformations) [![GitHub Release](https://img.shields.io/github/v/release/GeodetischeInfrastructuur/transformations)](https://github.com/GeodetischeInfrastructuur/transformations/releases)
 
 This repository contains a modified proj.db that implements the following
 transformations according to the recommendations of the NSGI (see image below).
@@ -16,7 +16,7 @@ transformations according to the recommendations of the NSGI (see image below).
    * added additional NSGI transformations
 
 2. A Dockerfile with [PROJ](https://proj.org/en/9.3/) configured to use this
-   NSGI authority as a base
+   NSGI authority as a base (published on [ghcr.io/geodetischeinfrastructuur/transformations](https://ghcr.io/geodetischeinfrastructuur/transformations))
 
 These will form the base for the transformations that are defined or recommended by
 [NSGI](https://www.nsgi.nl/) (Nederlandse Samenwerkingsverband Geodetische
@@ -24,9 +24,9 @@ Infrastructuur). In the future additional transformations might be added to this
 repository.
 
 > :warning: this repository contains 2 proj.db. The first (the default)
-> `proj.db` has the sql scripts nl_nsgi_00... till ns_nsgi_50... applied. The
+> `proj.db` has the sql scripts `default/nl_nsgi_00...` till `default/nl_nsgi_05...` applied. The
 > second `proj.time.dependent.transformations.db` has the sql script
-> 'nl_nsgi_60_time_dependent_transformations.sql' applied for adding time
+> `time_dependent/nl_nsgi_00_time_dependent_transformations.sql` applied for adding time
 > dependent transformations. For this second proj.db, a input epoch should be
 > provided (when applicable), to prevent the use of the default reference epoch
 > of the transformation. When one wants to use this second proj.db this can be done
@@ -47,14 +47,16 @@ repository.
 
 ## Docker
 
-The Docker image is intended to be used as a base image, for applications that
+The [Docker image](./Dockerfile) is intended to be used as a base image, for applications that
 layer on top of PROJ; for instance use it with
-[pyproj](https://pyproj4.github.io/pyproj/stable/index.html).
+[pyproj](https://pyproj4.github.io/pyproj/stable/index.html), see the [`Dockerfile.validate`](./Dockerfile.validate) file in this repo for an example.
+
+The Docker image is published on the Github container registry: [ghcr.io/geodetischeinfrastructuur/transformations](https://ghcr.io/geodetischeinfrastructuur/transformations).
 
 ### Build
 
 ```bash
-docker build -t ghcr.io/geodetischeinfrastructuur/transformations:1.1.1 .
+docker build -t geodetischeinfrastructuur/transformations:latest .
 ```
 
 ### Run
@@ -62,23 +64,20 @@ docker build -t ghcr.io/geodetischeinfrastructuur/transformations:1.1.1 .
 To start an interactive terminal inside the container run:
 
 ```bash
-docker run -it --rm --name nsgi-proj ghcr.io/geodetischeinfrastructuur/transformations:1.1.1
+docker run -it --rm geodetischeinfrastructuur/transformations:latest
 ```
 
 To invoke `projinfo` from your current terminal sessions run:
 
 ```bash
-docker run --rm --name nsgi-proj ghcr.io/geodetischeinfrastructuur/transformations:1.1.1 projinfo
+docker run --rm geodetischeinfrastructuur/transformations:latest projinfo
 ```
 
-## Test
-
-To verify if the NSGI transformation `EPSG:7931` -> `EPSG:7415` works as
-expected, run the following in a terminal:
+To verify if the NSGI transformation EPSG:7931 -> EPSG:7415 works as expected, run the following in a terminal:
 
 ```bash
-docker build -f validate/Dockerfile -t geodetischeinfrastructuur/pyproj:3.7.0 .
-docker run --rm -it geodetischeinfrastructuur/pyproj:3.7.0 python
+docker build . -f Dockerfile.validate -t geodetischeinfrastructuur/validate-transformations:latest 
+docker run --rm -it geodetischeinfrastructuur/validate-transformations:latest python
 ```
 
 Then run the following Python code:
@@ -89,7 +88,7 @@ etrf = transformer.TransformerGroup("EPSG:7931", "EPSG:7415")
 "{0[0]:.4f} {0[1]:.4f} {0[2]:.4f}".format(etrf.transformers[0].transform(52.115330444, 7.684748554, 41.4160))
 ```
 
-Alternatively the following [cs2cs](https://proj.org/en/9.3/apps/cs2cs.html) cmd
+Alternatively the following [cs2cs](https://proj.org/en/9.3/apps/cs2cs.html) command
 can be used:
 
 ```bash
@@ -101,21 +100,40 @@ Both should result in the following output: `'312352.6004 461058.5812 -2.5206'`
 ## Validation
 
 Running the full validation file can be done by running the following docker run
-cmd.
+command.
 
 ```bash
-docker run -d --rm -v `pwd`/validate:/validate geodetischeinfrastructuur/pyproj:3.7.0 python ./validate/validate.py ./validate/Z001_ETRS89andRDNAP.txt ./validate/validation-output.csv
+mkdir -p output # required otherwise output folder is created owned with root
+docker run -u "$(id -u):$(id -g)" --rm -v $(pwd)/output:/output -t geodetischeinfrastructuur/validate-transformations:latest python /app/self_validate.py /app/Z001_ETRS89andRDNAP.txt /output/validate-output.csv
 ```
 
 Or by running the Python script directly.
 
 ```bash
-cd validate
-python validate.py Z001_ETRS89andRDNAP.txt validation-output.csv
+uv sync # setup python environment with uv
+direnv allow # only on installation, every subsequent opening of the workspace will activate the uv managed env, see "direnv config" section in this readme
+./configure-proj.sh $(python -c 'import pyproj;print(pyproj.datadir.get_data_dir());') sql grids/nl_nsgi # note configure-proj.sh can only be run once since the sql commands will fail if applied multiple times
+python self_validate.py Z001_ETRS89andRDNAP.txt output/validate-output.csv
 ```
 
-This should output a `validate/validation-output.csv` file containing the
-results. When correct the result would show no (or minimal) deviation.
+When the validation result is `OK` output (stdout) is:
+
+```txt
+validation result: OK
+message: all points transformed and validated succesfully, output saved in output/validate-output.csv
+```
+
+When the validation result is `FAILED` output (stderr) is:
+
+```txt
+validation result: FAILED
+message: accurate transformation of one or more points failed (242), invalid points saved in /output/validate-output.invalid.csv, all points saved in /output/validate-output.csv
+```
+
+### direnv config
+
+Repository also contains a [`.envrc`](https://direnv.net/) config file, which automatically activates the `uv` managed
+virtual environment. See the [direnv wiki](https://github.com/direnv/direnv/wiki/Python#uv) for how to set this up.
 
 ## LICENSE
 
