@@ -49,7 +49,7 @@ repository.
 
 The [Docker image](./Dockerfile) is intended to be used as a base image, for applications that
 layer on top of PROJ; for instance use it with
-[pyproj](https://pyproj4.github.io/pyproj/stable/index.html), see the [`Dockerfile.validate`](./Dockerfile.validate) file in this repo for an example.
+[pyproj](https://pyproj4.github.io/pyproj/stable/index.html), see the [`validate/Dockerfile`](validate/Dockerfile) file in this repo for an example.
 
 The Docker image is published on the Github container registry: [ghcr.io/geodetischeinfrastructuur/transformations](https://ghcr.io/geodetischeinfrastructuur/transformations).
 
@@ -76,7 +76,7 @@ docker run --rm geodetischeinfrastructuur/transformations:latest projinfo
 To verify if the NSGI transformation EPSG:7931 -> EPSG:7415 works as expected, run the following in a terminal:
 
 ```bash
-docker build . -f Dockerfile.validate -t geodetischeinfrastructuur/validate-transformations:latest 
+docker build validate/ -t geodetischeinfrastructuur/validate-transformations:latest 
 docker run --rm -it geodetischeinfrastructuur/validate-transformations:latest python
 ```
 
@@ -104,16 +104,17 @@ command.
 
 ```bash
 mkdir -p output # required otherwise output folder is created owned with root
-docker run -u "$(id -u):$(id -g)" --rm -v $(pwd)/output:/output -t geodetischeinfrastructuur/validate-transformations:latest python /app/self_validate.py /app/Z001_ETRS89andRDNAP.txt /output/validate-output.csv
+docker run -u "$(id -u):$(id -g)" --rm -v $(pwd)/output:/output -t geodetischeinfrastructuur/validate-transformations:latest python /app/validate.py /app/Z001_ETRS89andRDNAP.txt /output/validate-output.csv
 ```
 
 Or by running the Python script directly.
 
 ```bash
-uv sync # setup python environment with uv
+cd validate/
+uv sync # setuppython  environment with uv
 direnv allow # only on installation, every subsequent opening of the workspace will activate the uv managed env, see "direnv config" section in this readme
-./configure-proj.sh $(python -c 'import pyproj;print(pyproj.datadir.get_data_dir());') sql grids/nl_nsgi # note configure-proj.sh can only be run once since the sql commands will fail if applied multiple times
-python self_validate.py Z001_ETRS89andRDNAP.txt output/validate-output.csv
+../configure-proj.sh $(python -c 'import pyproj;print(pyproj.datadir.get_data_dir());') ../sql ../grids/nl_nsgi # note configure-proj.sh can only be run once since the sql commands will fail if applied multiple times
+python validate.py Z001_ETRS89andRDNAP.txt ../output/validate-output.csv
 ```
 
 When the validation result is `OK` output (stdout) is:
