@@ -4,7 +4,7 @@ FROM ghcr.io/astral-sh/uv:python${PYTHON_VERSION}-bookworm-slim
 
 ARG PYTHON_VERSION
 WORKDIR /app
-COPY pyproject.toml uv.lock self_validate.py .python-version Z001_ETRS89andRDNAP.txt ./
+COPY pyproject.toml uv.lock validate.py .python-version Z001_ETRS89andRDNAP.txt ./
 RUN uv sync
 
 # COPY the transformation grids, the modified proj.db and all the other proj files, so we do not have to run configure-proj.sh
