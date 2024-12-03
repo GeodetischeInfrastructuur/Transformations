@@ -4,18 +4,18 @@
 license](https://img.shields.io/github/license/GeodetischeInfrastructuur/Transformations)](https://github.com/GeodetischeInfrastructuur/Transformations/blob/master/LICENSE) [![Static Badge](https://img.shields.io/badge/%20ghcr.io-geodetischeinfrastructuur%2Ftransformations-green?)](https://ghcr.io/geodetischeinfrastructuur/transformations) [![GitHub Release](https://img.shields.io/github/v/release/GeodetischeInfrastructuur/transformations)](https://github.com/GeodetischeInfrastructuur/transformations/releases)
 
 This repository contains a modified proj.db that implements the following
-transformations according to the recommendations of the NSGI (see image below).
+transformations according to the recommendations of the [NSGI](https://www.nsgi.nl/) (see image below).
 
 ![transformations](supported-transformations-nsgi.drawio.svg)
 
-1. SQL which adds to the [PROJ](https://proj.org/en/9.3/) proj.db:
+1. SQL which adds to the [PROJ](https://proj.org/en/stable/) proj.db:
    * added NSGI to authority references
    * added extents of NSGI transformations
    * added additional NL datum (AGRS.NL)
    * added additional NL CRSs
    * added additional NSGI transformations
 
-2. A Dockerfile with [PROJ](https://proj.org/en/9.3/) configured to use this
+2. A Dockerfile with [PROJ](https://proj.org/en/stable/) configured to use this
    NSGI authority as a base (published on [ghcr.io/geodetischeinfrastructuur/transformations](https://ghcr.io/geodetischeinfrastructuur/transformations))
 
 These will form the base for the transformations that are defined or recommended by
@@ -88,7 +88,7 @@ etrf = transformer.TransformerGroup("EPSG:7931", "EPSG:7415")
 "{0[0]:.4f} {0[1]:.4f} {0[2]:.4f}".format(etrf.transformers[0].transform(52.115330444, 7.684748554, 41.4160))
 ```
 
-Alternatively the following [cs2cs](https://proj.org/en/9.3/apps/cs2cs.html) command
+Alternatively the following [cs2cs](https://proj.org/en/stable/apps/cs2cs.html) command
 can be used:
 
 ```bash
