@@ -104,7 +104,7 @@ command.
 
 ```bash
 mkdir -p output # required otherwise output folder is created owned with root
-docker run -u "$(id -u):$(id -g)" --rm -v $(pwd)/output:/output -t geodetischeinfrastructuur/validate-transformations:latest python /app/validate.py /app/Z001_ETRS89andRDNAP.txt /output/validate-output.csv
+docker run -u "$(id -u):$(id -g)" --rm -v $(pwd)/output:/output -t geodetischeinfrastructuur/validate-transformations:latest python /app/validate.py /app/validate_ETRS89andRDNAP.txt /output/validate-output.csv
 ```
 
 Or by running the Python script directly.
@@ -114,7 +114,7 @@ cd validate/
 uv sync # setuppython  environment with uv
 direnv allow # only on installation, every subsequent opening of the workspace will activate the uv managed env, see "direnv config" section in this readme
 ../configure-proj.sh $(python -c 'import pyproj;print(pyproj.datadir.get_data_dir());') ../sql ../grids/nl_nsgi # note configure-proj.sh can only be run once since the sql commands will fail if applied multiple times
-python validate.py Z001_ETRS89andRDNAP.txt ../output/validate-output.csv
+python validate.py validate_ETRS89andRDNAP.txt ../output/validate-output.csv
 ```
 
 When the validation result is `OK` output (stdout) is:
